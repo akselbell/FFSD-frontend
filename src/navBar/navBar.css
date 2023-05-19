@@ -4,3 +4,13 @@
     padding: 10px 30px;
     background-color: gray;
 }
+
+.left-navbar {
+    display: flex;
+    gap: 30px;
+    color: white;
+}
+
+#ffsd {
+    
+}
