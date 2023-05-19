@@ -1,8 +1,8 @@
 //main entry point for the app
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from './App';
 import './index.css';
+import SiteRouter from "./router";
 
 const root = document.getElementById("root");
 if(!root) {
@@ -10,4 +10,8 @@ if(!root) {
     process.exit();
 }
 
-createRoot(root).render(<div><App /></div>)
+createRoot(root).render(
+    <React.StrictMode>
+        <SiteRouter />
+    </React.StrictMode>
+);
