@@ -1,0 +1,26 @@
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 30;
+    color: black;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+.logo {
+    height: 50px;
+    width: 50px;
+}
+.navbar .middle {
+    flex: 50%;
+    height: 100%;
+    padding-left: 200px;
+    color: black;
+}
+.nav {
+    text-decoration: none;
+    color: black;
+}
