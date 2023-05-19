@@ -1,3 +1,4 @@
+//main entry point for the app
 import React from "react";
 import { createRoot } from "react-dom/client";
 
