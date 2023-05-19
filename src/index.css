@@ -1,0 +1,39 @@
+html, body, #root, .app {
+    height: 100%;
+    width: 100%;
+    font-family: "DM Sans", sans-serif;
+    background-color: white;
+}
+
+.header {
+    background-color: rgba(0, 0, 139, 0.834);
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 30;
+    padding-top: .15rem;
+    padding-bottom: .15rem;
+    padding-left: 95%;
+    font-size: 12px;
+}
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 30;
+    color: black;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.navInside {
+    /*centering*/
+    background-color: gray;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

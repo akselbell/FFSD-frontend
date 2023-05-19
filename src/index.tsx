@@ -1,6 +1,8 @@
 //main entry point for the app
 import React from "react";
 import { createRoot } from "react-dom/client";
+import App from './App';
+import './index.css';
 
 const root = document.getElementById("root");
 if(!root) {
@@ -8,4 +10,4 @@ if(!root) {
     process.exit();
 }
 
-createRoot(root).render(<div>hello world</div>)
+createRoot(root).render(<div><App /></div>)
