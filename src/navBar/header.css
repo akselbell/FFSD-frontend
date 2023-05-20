@@ -1,0 +1,30 @@
+.header {
+    position: absolute;
+    width: 1512px;
+    height: 32px;
+    left: 0px;
+    top: 0px;
+    background: #1A237E;
+}
+
+.header .headerTxt {
+    width: 58px;
+    height: 15px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.02em;
+    color: white;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-top: 8.5px;
+    padding-left: 1100px;
+    white-space: nowrap;
+}

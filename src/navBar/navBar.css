@@ -1,16 +1,55 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px;
-    background-color: gray;
+    padding: 46px 30px;
 }
 
 .left-navbar {
     display: flex;
     gap: 30px;
-    color: white;
+    align-items: center;
+}
+
+.left-navbar .txtNavbar {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+
+    width: 50px;
+    height: 19px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.015em;
+    color: black;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.ffsdButton {
+    width: 296px;
+    height: 85px;
+    left: 56px;
+    top: 46px;
+    background: #1A237E;
+    border-radius: 16px;
+    margin-left: 26px;
 }
 
 #ffsd {
-    
+    width: 137px;
+    height: 44px;
+    font-family: 'Inter';
+    padding-left: calc(50% - 137px/2 + 0.5px);
+    padding-top: 20px;
+
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.405em;
+    color: white;
 }
