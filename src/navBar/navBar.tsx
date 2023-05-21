@@ -1,5 +1,7 @@
 import React from "react";
 import "./navBar.css";
+import { Link } from "react-router-dom";
+
 
 function Navbar() {
     return (
@@ -11,8 +13,8 @@ function Navbar() {
                 </div>
             </div>
             <div className="txtNavbar">
-                {[{name: "About"}, {name: "Resources"}, {name: "Events"}, {name: "Impact"}, {name: "Sponsors"}].map((word, index) => { //add link field for each bracket
-                    return <a key={index}>{word.name}</a>;
+                {[{name: "About", href: "/about"}, {name: "Events", href: "/events"}, {name: "News", href: "/news"}, {name: "Get Involved", href: "/getinvolved"}, {name: "Advocacy", href: "/advocacy"}].map((word, index) => { //add link field for each bracket
+                    return <Link className="txtNavbar" to={word.href} key={index}>{word.name}</Link>;
                 })}
             </div>
         </div> 

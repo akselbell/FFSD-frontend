@@ -1,7 +1,6 @@
 .navbar {
-    display: flex;
+    padding: 14px 30px;
     justify-content: space-between;
-    padding: 46px 30px;
 }
 
 .left-navbar {
@@ -12,10 +11,10 @@
 
 .left-navbar .txtNavbar {
     display: flex;
-    gap: 48px;
     align-items: center;
+    gap: 48px;
+    justify-content: space-between;
 
-    width: 50px;
     height: 19px;
     font-family: "Inter";
     font-style: normal;
@@ -27,6 +26,8 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .ffsdButton {
