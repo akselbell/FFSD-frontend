@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "../navBar";
 import Header from "../navBar/header";
+import "./home.css";
 
 function Home() {
     return <>
         <Header />
         <Navbar />
         <div className="frame24">
-            hello world
+            Fee for Service Dentists
         </div>
     </>;
 }

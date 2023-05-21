@@ -13,7 +13,7 @@ function Navbar() {
                 </div>
             </div>
             <div className="txtNavbar">
-                {[{name: "About", href: "/about"}, {name: "Events", href: "/events"}, {name: "News", href: "/news"}, {name: "Get Involved", href: "/getinvolved"}, {name: "Advocacy", href: "/advocacy"}].map((word, index) => { //add link field for each bracket
+                {[{name: "About", href: "/about"}, {name: "Events", href: "/events"}, {name: "News", href: "/news"}, {name: "Get Involved", href: "/getinvolved"}, {name: "Advocacy", href: "/advocacy"}].map((word, index) => {
                     return <Link className="txtNavbar" to={word.href} key={index}>{word.name}</Link>;
                 })}
             </div>
