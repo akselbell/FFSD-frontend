@@ -6,6 +6,9 @@ function Home() {
     return <>
         <Header />
         <Navbar />
+        <div className="frame24">
+            hello world
+        </div>
     </>;
 }
 
