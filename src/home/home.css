@@ -81,3 +81,7 @@
     align-items: center;
     cursor: pointer;
 }
+
+.cards {
+    margin-left: 71px;
+}

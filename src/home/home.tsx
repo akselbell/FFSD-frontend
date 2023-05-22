@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../navBar";
 import Header from "../navBar/header";
 import Resource from "./resources";
+import Card from "./cards";
 import "./home.css";
 
 function Home() {
@@ -30,6 +31,9 @@ function Home() {
                     return <Resource image={word.image} alt={word.alt} title={word.title} text={word.text} key={index}/>;
                 })}
             </div>
+        </div>
+        <div className="cards">
+                <Card title="Our Impact" image="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&w=1000&q=80" alt="image1" />
         </div>
     </>;
 }

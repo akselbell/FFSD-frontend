@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 1356px;  /*this is too big won't fit on all screens*/
+    height: 586px;
+    /*order: 2; --not sure what this does but its in the css figma*/
+}
+
+.cardTitle {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.005em;
+}
+
+.imageCard {
+    width: 1356px;      /*this is too big won't fit on all screens*/
+    height: 504px;
+    padding-top: 38px;
+}
