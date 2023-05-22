@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
     return (
     <div className="navbar">
-        <div className="left-navbar"> {/*left side */}
+        <div className="navbar-cont"> {/*left side */}
             <div className="ffsdButton"> {/*put button inside here */}
                 <div id="ffsd">
                     FFSD
@@ -17,10 +17,11 @@ function Navbar() {
                     return <Link className="txtNavbar" to={word.href} key={index}>{word.name}</Link>;
                 })}
             </div>
+            <div className="right-navbar"> {/*right side */}
+            
+            </div>
         </div> 
-        <div> {/*right side */}
-
-        </div>
+        
 
     </div>);
 }

@@ -1,5 +1,4 @@
 .header {
-    width: 1512px;
     height: 32px;
     left: 0px;
     top: 0px;
@@ -7,7 +6,14 @@
     display: flex;
 }
 
+.headerBox {
+    padding-left: 77%;
+}
+
 .header .headerTxt {
+    flex-direction: row;
+    align-items: flex-start;
+
     display: flex;
     height: 15px;
     font-family: "Inter";
@@ -24,7 +30,7 @@
     gap: 16px;
     align-items: center;
     padding-top: 8.5px;
-    padding-left: 1176px; /*this is why it gets cut off*/
-   white-space: nowrap;
+    /*padding-left: 1176px; /*this is why it gets cut off*/
+    white-space: nowrap;
     
 }

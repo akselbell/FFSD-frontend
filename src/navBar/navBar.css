@@ -1,15 +1,16 @@
 .navbar {
     padding: 14px 30px;
     justify-content: space-between;
+
 }
 
-.left-navbar {
+.navbar-cont {
     display: flex;
     gap: 30px;
     align-items: center;
 }
 
-.left-navbar .txtNavbar {
+.navbar-cont .txtNavbar {
     display: flex;
     align-items: center;
     gap: 48px;
@@ -53,4 +54,16 @@
     line-height: 44px;
     letter-spacing: 0.405em;
     color: white;
+}
+
+.right-navbar {
+    flex-direction: row;
+    background-color: red;
+    align-items: center;
+    padding: 0px;
+    gap: 32px;
+
+    width: 147px;
+    height: 35px;
+    padding-top: 0px;
 }
