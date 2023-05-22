@@ -32,7 +32,7 @@
 }
 
 .ffsdButton {
-    width: 296px;
+    width: 20%; /*change to 296 maybe according to figma*/
     height: 85px;
     left: 56px;
     top: 46px;
