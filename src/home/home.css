@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100px;
-    margin-top: 60px;
+    margin-top: 91px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+        font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+    letter-spacing: 0.005em;
+    color: #0F0F0F;
 }
