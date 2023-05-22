@@ -84,4 +84,16 @@
 
 .cards {
     margin-left: 71px;
+    height: 2662px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer {
+    width: 100%;
+    height: 337px;
+    margin-top: 112px;
+    background-color: #D9D9D9;
+
 }

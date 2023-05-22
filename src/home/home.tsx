@@ -33,8 +33,14 @@ function Home() {
             </div>
         </div>
         <div className="cards">
-                <Card title="Our Impact" image="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&w=1000&q=80" alt="image1" />
+                {[{title: "Our Impact", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&w=1000&q=80", alt: "ImpactImage"},
+                  {title: "Become a Member Today", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&w=1000&q=80", alt: "MemberImage"},
+                  {title: "Events", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&w=1000&q=80", alt: "EventsImage"},
+                  {title: "Our Sponsors", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&w=1000&q=80", alt: "SponsorsImage"}].map((word, index) => {
+                    return <Card title={word.title} image={word.image} alt={word.alt} key={index}/>;
+                  })}
         </div>
+        <div className="footer"></div>
     </>;
 }
 

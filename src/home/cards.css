@@ -17,7 +17,7 @@
 }
 
 .imageCard {
-    width: 1356px;      /*this is too big won't fit on all screens*/
+    width: 1356px;      /*this is too big won't fit on all screens -- maybe change to percentage*/
     height: 504px;
     padding-top: 38px;
 }
