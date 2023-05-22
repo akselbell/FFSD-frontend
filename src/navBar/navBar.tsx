@@ -18,7 +18,7 @@ function Navbar() {
                 })}
             </div>
             <div className="right-navbar"> {/*right side */}
-            
+                
             </div>
         </div> 
         
