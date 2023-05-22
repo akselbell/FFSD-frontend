@@ -2,14 +2,82 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 60px;
+    width: 677px;
+    height: 292px;
+    margin-left: 71px;
     margin-top: 91px;
+}
 
-    font-family: 'Inter';
+.frame25 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-left: 71px;
+    margin-top: 106px;
+    width: 1124px;
+    height: 558px;
+    
+    font-family: "Inter";
     font-style: normal;
     font-weight: 800;
-        font-size: 48px;
-    line-height: 58px;
-    /* identical to box height */
+    font-size: 36px;
+    line-height: 44px;
     letter-spacing: 0.005em;
-    color: #0F0F0F;
+}
+
+.Resources {
+    display: flex;
+    width: 1052px;                  /*real length should be 1124*/
+    justify-content: space-between;
+}
+
+.frame23 {
+    gap: 32px;
+    width: 677px;
+    height: 166px;
+}
+
+.title {
+    width: 571px;
+    height: 58px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 58px;
+}
+
+.text {
+    width: 677px;
+    height: 76px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    padding-top: 32px;
+}
+
+.joinButton2 {
+    display: flex;
+    justify-content: center;
+    padding: 8px 16px;
+    gap: 10px;
+    background: #1A237E;
+    border: none;
+
+    width: 162px;
+    height: 56px;
+    border-radius: 36px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    align-items: center;
+    cursor: pointer;
 }

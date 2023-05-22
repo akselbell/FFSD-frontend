@@ -8,6 +8,7 @@
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-direction: row;
 }
 
 .navbar-cont .txtNavbar {
@@ -57,13 +58,43 @@
 }
 
 .right-navbar {
-    flex-direction: row;
-    background-color: red;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+
     align-items: center;
-    padding: 0px;
-    gap: 32px;
+    gap: 32px;  /*try 32*/
 
     width: 147px;
     height: 35px;
     padding-top: 0px;
+}
+
+.logIn {
+    color: #1A237E;
+    font-family: "Inter";
+    font-style: normal;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.015em;
+    cursor: pointer;
+}
+
+.join {
+    padding: 8px 16px;
+    width: 66px;
+    height: 35px;
+    background: #1A237E;
+    color: white;
+    border-radius: 16px;
+    border: none;
+    
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    cursor:pointer;
 }

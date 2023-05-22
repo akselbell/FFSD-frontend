@@ -32,5 +32,6 @@
     padding-top: 8.5px;
     /*padding-left: 1176px; /*this is why it gets cut off*/
     white-space: nowrap;
+    cursor: pointer;
     
 }

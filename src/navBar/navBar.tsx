@@ -18,7 +18,12 @@ function Navbar() {
                 })}
             </div>
             <div className="right-navbar"> {/*right side */}
-                
+                <div className="logIn">
+                    Log In
+                </div>
+                <button className="join">
+                    Join
+                </button>
             </div>
         </div> 
         
