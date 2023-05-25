@@ -1,6 +1,4 @@
 html, body, #root, .app {
-    height: 100%;
-    width: 100%;
     font-family: "DM Sans", sans-serif;
     background-color: white;
     flex-direction: column;

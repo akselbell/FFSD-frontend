@@ -1,3 +1,4 @@
+/* eslint-disable */
 const ESLintPlugin = require("eslint-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 const MiniCss = require("mini-css-extract-plugin");
@@ -10,6 +11,11 @@ module.exports = {
     entry: "./src/index.tsx",
     devServer: {
         historyApiFallback: true,
+        proxy: {
+            "/api/*": {
+                target: "http://localhost:80",
+            }
+        }
     },
     output: {
         path: path.join(__dirname, "dist")

@@ -40,6 +40,7 @@
     background: #1A237E;
     border-radius: 16px;
     margin-left: 26px;
+    text-decoration: none;
 }
 
 #ffsd {
@@ -80,6 +81,7 @@
     line-height: 19px;
     letter-spacing: 0.015em;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .join {
@@ -97,4 +99,5 @@
     font-size: 16px;
     line-height: 19px;
     cursor:pointer;
+    text-decoration: none;
 }

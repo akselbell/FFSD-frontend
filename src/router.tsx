@@ -1,6 +1,8 @@
 import React from "react";
 import  { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from "./home";
+import About from "./about";
+import LogIn from "./login";
 
 
 function SiteRouter() {
@@ -8,6 +10,8 @@ function SiteRouter() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />}/>    {/*only routes should be in here */}
+                <Route path="/about" element={<About />}/>
+                <Route path="/login" element={<LogIn />}/>
             </Routes>
         </Router>
     );

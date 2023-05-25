@@ -7,20 +7,22 @@ function Navbar() {
     return (
     <div className="navbar">
         <div className="navbar-cont"> {/*left side */}
-            <div className="ffsdButton"> {/*put button inside here */}
+            <Link className="ffsdButton" to="/"> {/*put button inside here */}
                 <div id="ffsd">
                     FFSD
                 </div>
-            </div>
+            </Link>
             <div className="txtNavbar">
                 {[{name: "About", href: "/about"}, {name: "Events", href: "/events"}, {name: "News", href: "/news"}, {name: "Get Involved", href: "/getinvolved"}, {name: "Advocacy", href: "/advocacy"}].map((word, index) => {
                     return <Link className="txtNavbar" to={word.href} key={index}>{word.name}</Link>;
                 })}
             </div>
             <div className="right-navbar"> {/*right side */}
-                <div className="logIn">
-                    Log In
-                </div>
+                <Link className="logIn" to="/login">
+                    <div className="logIn">
+                        Log In
+                    </div>
+                </Link>
                 <button className="join">
                     Join
                 </button>
