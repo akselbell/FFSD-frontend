@@ -26,6 +26,12 @@ function Join() {
                     })
                 }).then((response) => {
                     console.log(response.status);
+
+                    if(response.ok) {
+                        return <div>
+                            Thank you for signing up, please log in!
+                        </div>;
+                    }
                 });
             }}>
                 <label htmlFor="uname"><b>Username: </b></label>
