@@ -23,9 +23,11 @@ function Navbar() {
                         Log In
                     </div>
                 </Link>
-                <button className="join">
-                    Join
-                </button>
+                <Link className="join" to="/join">
+                    <button id="join">
+                        Join
+                    </button>
+                </Link>
             </div>
         </div> 
         
