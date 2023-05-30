@@ -24,6 +24,8 @@ function Join() {
                         password: password,
                         email: email
                     })
+                }).then((response) => {
+                    console.log(response.status);
                 });
             }}>
                 <label htmlFor="uname"><b>Username: </b></label>
