@@ -4,15 +4,16 @@ import Header from "../navBar/header";
 import Navbar from "../navBar";
 import { useState } from "react";
 
-function LogIn() {
+function LogIn() {                                      //clean this up using .then instead
     const [loggedIn, setLoggedIn] = useState(false);
     const [error, setError] = useState(null);
 
-    const fetchData = async () => {
+   function fetchData() {
         const username = (document.getElementById("uname") as HTMLInputElement).value;
         const password = (document.getElementById("password") as HTMLInputElement).value;
-        try {
-            const response = await fetch("/api/login", {   //hits the backend, fetches from localhost:80/api/login and passes that information
+
+        fetch("/api/login", 
+        {   //hits the backend, fetches from localhost:80/api/login and passes that information
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -21,62 +22,49 @@ function LogIn() {
                     username: username,
                     password: password,
                 })
-            });
-
-            const responseData = await response.json();
-            
-            if (responseData.message) setLoggedIn(true);
-            if (responseData.error) {
-                setLoggedIn(false);
-                setError(responseData.error);
-            }
-        }  catch (error) {
-            console.log(error);
-            return null;
-        }
-    };
-
-    useEffect(() => {
-        const checkStatus = async () => {
-            try {
-                const response = await fetch("/api/login", {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                });
-                const responseData = await response.json();
-                if (responseData.message) setLoggedIn(true);
-                if (responseData.error) {
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.message) setLoggedIn(true);
+                if (data.error) {
                     setLoggedIn(false);
-                    setError(responseData.error);
+                    setError(data.error);
                 }
-            } catch (error) {
-                console.log(error);
-                return null;
-            }
-        };
-        checkStatus();
+            })
+            .catch((err) => {console.log(err);});
+    }
+
+    useEffect(() => {                       //calls the callback every time the array of dependencies changes
+        fetch("/api/login")
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.username) setLoggedIn(true);
+                if (data.error) {
+                    setError(data.error);
+                }
+            })
+            .catch((err) => {console.log(err);});
     }, []);
 
-    const logOut = async () => {
-        try {
-            const response = await fetch("/api/signout", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            });
-            const responseData = await response.json();
-            if (responseData.message) setLoggedIn(false);
-            if (responseData.error) {
-                setError(responseData.error);
+    function logOut() {
+        fetch("/api/signout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.message) {
+                setLoggedIn(false);
+            }
+            if (data.error) {
+                setError(data.error);
                 setLoggedIn(true);
             }
-        } catch (error) {
-            console.log(error);
-        }
-    };
+        })
+        .catch(error => console.log(error));
+    }
 
     return <>
         <Header />
