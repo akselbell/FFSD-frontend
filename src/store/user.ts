@@ -67,6 +67,7 @@ export const login = async (username: string, password: string): Promise<userT |
  * @returns {Promise<string | void>} error message if any occured
  */
 export const signUp = async (username: string, password: string, email: string): Promise<string | void> =>{
+
     try {
         const res: {error?: string} = await fetch("/api/signup", {   //hits the backend, fetches from localhost:80/api/login and passes that information
             method: "POST",
@@ -74,10 +75,11 @@ export const signUp = async (username: string, password: string, email: string):
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ username, password, email })
-        }).then(v=>v.json());
-
+        }).then(v => v.json());
+        
         return res.error;
     } catch (error) {
+
         console.error(error);
         return "Something went wrong";
     }
