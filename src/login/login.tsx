@@ -1,87 +1,53 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./login.css";
 import Header from "../navBar/header";
 import Navbar from "../navBar";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, setUser, userStateT, userT } from "../store/user";
+/*
+    dispatch(setUser({username: "bruh"} as userT))
+    
+    SAME AS
+    
+    dispatch({
+        "type": "user_state/setUser",
+        "payload": {
+            "username": "bruh"
+        }
+    })
+*/
 
 function LogIn() {                                      //clean this up using .then instead
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [error, setError] = useState(null);
-
-   function fetchData() {
-        const username = (document.getElementById("uname") as HTMLInputElement).value;
-        const password = (document.getElementById("password") as HTMLInputElement).value;
-
-        fetch("/api/login", 
-        {   //hits the backend, fetches from localhost:80/api/login and passes that information
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: password,
-                })
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.message) setLoggedIn(true);
-                if (data.error) {
-                    setLoggedIn(false);
-                    setError(data.error);
-                }
-            })
-            .catch((err) => {console.log(err);});
-    }
-
-    useEffect(() => {                       //calls the callback every time the array of dependencies changes
-        fetch("/api/login")
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.username) setLoggedIn(true);
-                if (data.error) {
-                    setError(data.error);
-                }
-            })
-            .catch((err) => {console.log(err);});
-    }, []);
-
-    function logOut() {
-        fetch("/api/signout", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.message) {
-                setLoggedIn(false);
-            }
-            if (data.error) {
-                setError(data.error);
-                setLoggedIn(true);
-            }
-        })
-        .catch(error => console.log(error));
-    }
-
+    const dispatch = useDispatch();
+    const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);
+    
     return <>
         <Header />
         <Navbar />
         <div>
-            {loggedIn ?
+            {user ? "Hello " + user.username : ""}
+            
+            {user ?
                 <div>
                     <div>Login sucessfull!</div>
                     <button onClick={() => {
-                        logOut();
+                        dispatch(logout());
                     }}>logout</button>
                 </div>
                 :
                 <div>
                     <form className="login" onSubmit={(e) => {
                         e.preventDefault();                             //prevents clearing the form for a new entry
-                        fetchData();
+                        const username = (document.getElementById("uname") as HTMLInputElement).value;
+                        const password = (document.getElementById("password") as HTMLInputElement).value;
+                        
+                        login(username, password).then(userVal=>{
+                            if(typeof userVal === "string")
+                                return console.error(userVal);
+                            
+                            dispatch(setUser(userVal));
+                        });
+
                     }}>
                         <label htmlFor="uname"><b>Username: </b></label>
                         <input id="uname" type="text" placeholder="Type your username" name="uname" required />
@@ -91,10 +57,9 @@ function LogIn() {                                      //clean this up using .t
     
                         <input type="submit" value="send" />
                     </form>
-                    <div>{error}</div>
+                    {/*<div>{error}</div>*/}
                 </div>
-                
-            }
+                }
         </div>
     </>;
 }

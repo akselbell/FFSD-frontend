@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 module.exports = {
     root: true,
     extends: [
@@ -23,6 +23,14 @@ module.exports = {
         }
     },
     rules: {
-        semi:"warn"
+        semi:"warn",
+        "@typescript-eslint/no-unused-vars": [
+            "off",
+            {
+                varsIgnorePattern: "^_",
+                argsIgnorePattern: "^_"
+            },
+        ],
+        "@typescript-eslint/no-explicit-any": "off"
     }
 }

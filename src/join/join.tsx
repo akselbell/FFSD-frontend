@@ -4,43 +4,13 @@ import Header from "../navBar/header";
 import Navbar from "../navBar";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { signUp } from "../store/user";
 
 
 function Join() {
     const [res, setResponse] = useState(null);
     const [error, setError] = useState(null);
 
-    const fetchData = async () => {
-        const username = (document.getElementById("uname") as HTMLInputElement).value;
-        const password = (document.getElementById("password") as HTMLInputElement).value;
-        const email = (document.getElementById("email") as HTMLInputElement).value;
-        try {
-            const response = await fetch("/api/signup", {   //hits the backend, fetches from localhost:80/api/login and passes that information
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: password,
-                    email: email
-                })
-            });
-
-            const responseData = await response.json();
-            if (responseData.message) {
-                console.log(responseData.message);
-                setResponse(responseData.message);
-            }
-            if (responseData.error) {
-                console.log(responseData.error);
-                setError(responseData.error);
-            }
-        } catch (error) {
-            console.log(error);
-            return null;
-        }
-    };
 
     return <>
         <Header />
@@ -55,7 +25,15 @@ function Join() {
             <>
                 <form className="joinForm" onSubmit={(e) => {
                     e.preventDefault();                             //prevents clearing the form for a new entry   
-                    fetchData();   
+                    const username = (document.getElementById("uname") as HTMLInputElement).value;
+                    const password = (document.getElementById("password") as HTMLInputElement).value;
+                    const email = (document.getElementById("email") as HTMLInputElement).value;
+                    
+                    signUp(username, password, email).then(v=>{ // signUp only returns a string error if occurred
+                        if(typeof v === "string")
+                            return console.error(v);
+                        window.location.href =  "http://localhost:3000/login";
+                    });  
                 }}>
                     <label htmlFor="uname"><b>Username: </b></label>
                     <input id="uname" type="text" placeholder="Type your username" name="uname" required />

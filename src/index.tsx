@@ -3,6 +3,8 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import './index.css';
 import SiteRouter from "./router";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 const root = document.getElementById("root");
 if(!root) {
@@ -12,6 +14,8 @@ if(!root) {
 
 createRoot(root).render(
     <React.StrictMode>
-        <SiteRouter />
+        <Provider store={store}>        {/*provides global state to app*/}
+            <SiteRouter />
+        </Provider>
     </React.StrictMode>
 );
