@@ -10,6 +10,6 @@ export const store = configureStore({               //store that holds the state
 
 fetchMe().then(v=>{
     if(typeof v == "string")
-        return console.error(v);
+        return console.log(v);
     store.dispatch(setUser(v));
 });

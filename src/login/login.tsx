@@ -17,7 +17,7 @@ import { login, logout, setUser, userStateT, userT } from "../store/user";
     })
 */
 
-function LogIn() {                                      //clean this up using .then instead
+function LogIn() {
     const dispatch = useDispatch();
     const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);
     

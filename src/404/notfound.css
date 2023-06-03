@@ -1,0 +1,23 @@
+
+.not-found{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-size: 30pt;
+    text-align: center;
+    line-height: 60pt;
+}
+
+.error-status{
+    font-size: 40pt;
+}
+
+code{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+
+
+

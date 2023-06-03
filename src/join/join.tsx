@@ -13,6 +13,7 @@ function Join() {
         window.location.href = "/";
         return <></>;
     }
+
     return <>
         <Header />
         <Navbar />

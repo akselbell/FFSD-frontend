@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 
 function Navbar() {
-    return (
-    <div className="navbar">
+    return <div className="navbar">
         <div className="navbar-cont"> {/*left side */}
             <Link className="ffsdButton" to="/"> {/*put button inside here */}
                 <div id="ffsd">
@@ -30,9 +29,7 @@ function Navbar() {
                 </Link>
             </div>
         </div> 
-        
-
-    </div>);
+    </div>;
 }
 
 export default Navbar;
