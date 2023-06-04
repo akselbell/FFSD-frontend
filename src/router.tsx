@@ -12,7 +12,7 @@ import NotFound from "./404";
  * @param el element to render at pathname
  * @returns {{path: string, element: JSX.Element}} json object with path and string in it for createBrowserRouter
  */
-const makeRoute = (p: string, el: JSX.Element): {path: string, element: JSX.Element}=>{
+const makeRoute = (p: string, el: JSX.Element): {path: string, element: JSX.Element} => {
     return {path: p, element: el};
 };
 
