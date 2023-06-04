@@ -25,7 +25,7 @@ export type userStateT = {
  */
 export const fetchMe = async (): Promise<userT | string> => {
     try {
-        const user: userT = await fetch("/api/me").then(v=>v.json());
+        const user: userT = await fetch("/api/me").then(v => v.json());
         if (user.error) return user.error;
         
         return user;
@@ -49,7 +49,7 @@ export const login = async (username: string, password: string): Promise<userT |
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ username, password })
-        }).then(v=>v.json());
+        }).then(v => v.json());
 
         if(user.error) return user.error;
 
@@ -75,7 +75,7 @@ export const signUp = async (username: string, password: string, email: string):
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ username, password, email })
-        }).then(v=>v.json());
+        }).then(v => v.json());
         
         return res.error;
     } catch (error) {

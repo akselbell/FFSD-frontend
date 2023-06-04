@@ -4,6 +4,6 @@ export const safeJSON = (toParse: string, receiver?: ((this: any, key: string, v
     try {
         return JSON.parse(toParse, receiver);
     } catch(_) {
-        throw new SyntaxError("Invalid json: "+toParse);
+        throw new SyntaxError("Invalid json: " + toParse);
     }
 };

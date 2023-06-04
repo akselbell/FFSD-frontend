@@ -19,14 +19,13 @@ import { login, logout, setUser, userStateT, userT } from "../store/user";
 
 function LogIn() {
     const dispatch = useDispatch();
-    const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);
+    const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);       //this gets the state from user.ts
     
     return <>
         <Header />
         <Navbar />
         <div>
             {user ? "Hello " + user.username : ""}
-            
             {user ?
                 <div>
                     <div>Login sucessfull!</div>
@@ -41,10 +40,8 @@ function LogIn() {
                         const username = (document.getElementById("uname") as HTMLInputElement).value;
                         const password = (document.getElementById("password") as HTMLInputElement).value;
                         
-                        login(username, password).then(userVal=>{
-                            if(typeof userVal === "string")
-                                return console.error(userVal);
-                            
+                        login(username, password).then(userVal => {
+                            if(typeof userVal === "string") return console.error(userVal);
                             dispatch(setUser(userVal));
                         });
 

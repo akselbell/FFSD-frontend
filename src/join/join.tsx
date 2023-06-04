@@ -6,10 +6,9 @@ import { Link } from "react-router-dom";
 import { signUp, userT } from "../store/user";
 import { useSelector } from "react-redux";
 
-
 function Join() {
     const user: null | userT = useSelector((s: any)=> s.user_state.user); // how to access state
-    if(user){
+    if (user) {                                                           //redirects to home if logged in alread
         window.location.href = "/";
         return <></>;
     }
@@ -24,9 +23,8 @@ function Join() {
                 const password = (document.getElementById("password") as HTMLInputElement).value;
                 const email = (document.getElementById("email") as HTMLInputElement).value;
                 
-                signUp(username, password, email).then(v=>{ // signUp only returns a string error if occurred
-                    if(typeof v === "string")
-                        return console.error(v);
+                signUp(username, password, email).then(v => { // signUp only returns a string error if occurred
+                    if(typeof v === "string") return console.error(v);
                     window.location.href =  "/login";
                 }).catch(err => {
                     console.log(err);
