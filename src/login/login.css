@@ -7,21 +7,66 @@
 .loginContainer {
     width: 670px;
     height: 512px;
-    padding-top: 124px;
-    margin-left: calc(50% - 670px/2);
+    /*padding-top: 124px;
+    margin-left: calc(50% - 670px/2);*/
     background-color: white;
+    position: absolute;
+    margin-top: 124px;
+    margin-left: calc(50% - 670px/2);
 }
 
 .login {
     display: flex;
     flex-direction: column;
+    height: 512px;
+    align-items: center;
+}
+
+input {
+    background-color: #F6F6F6;
     width: 473px;
+    height: 48px;
+    box-sizing: border-box;
+    border: 1px solid #A2A2A2;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+label {
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0.015em;
+    color: black;
+    padding-right: 385px;
+}
+
+.loginButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 473px;
+    height: 56px;
+    border-radius: 36px;
+    background-color: #E4EBEE;
+    border: none;
+    
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
 }
 
 .loginTitle {
     width: 100px;
-    height: 100px;
-    padding-left: 285px;
+    height: 66px;
     padding-top: 40px;
     font-family: "Inter";
     font-style: normal;
@@ -30,6 +75,24 @@
     line-height: 44px;
     letter-spacing: 0.005em;
     color: black;
+}
+
+.joinLoginButton {
+    width: 473px;
+    height: 56px;
+
+    background: #1A237E;
+    color: white;
+    border-radius: 36px;
+    border: none;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    cursor:pointer;
+    text-decoration: none;
 }
 
 .footerLogin {

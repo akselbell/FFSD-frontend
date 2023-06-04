@@ -4,6 +4,7 @@ import Header from "../navBar/header";
 import Navbar from "../navBar";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, setUser, userStateT, userT } from "../store/user";
+import { Link } from "react-router-dom";
 /*
     dispatch(setUser({username: "bruh"} as userT))
     
@@ -47,14 +48,19 @@ function LogIn() {
                             });
 
                         }}><div className="loginTitle">Login</div>
-                            <label htmlFor="uname"><b>Username: </b></label>
-                            <input id="uname" type="text" placeholder="Type your username" name="uname" required />
+                            <label htmlFor="uname">Username: </label>
+                            <input id="uname" type="text" name="uname" required />
         
-                            <label htmlFor="pass"><b>Password: </b></label>
-                            <input id="password" type="password" placeholder="Type your password" name="pass" required />
+                            <label htmlFor="pass">Password: </label>
+                            <input id="password" type="password" name="pass" required />
         
-                            <input type="submit" value="send" />
+                            <input className="loginButton" type="submit" value="Login" />
+
+                            <Link className="joinLoginButton" to="/join">
+                                <button className="joinLoginButton">Join</button>
+                            </Link>
                         </form>
+                            {/*<Link className="joinLoginButton" to="/join">Join</Link>*/}
                         {/*<div>{error}</div>*/}
                     </div>
                 </div>
