@@ -15,6 +15,7 @@
 .login {
     display: flex;
     flex-direction: column;
+    width: 473px;
 }
 
 .loginTitle {
