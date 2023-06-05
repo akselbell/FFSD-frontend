@@ -1,3 +1,8 @@
+.homeBackground {
+    height: 515px;
+    background-color: #E4EBEE;
+}
+
 .frame24 {
     display: flex;
     flex-direction: column;
@@ -6,7 +11,6 @@
     width: 677px;
     height: 292px;
     margin-left: 71px;
-    margin-top: 91px;
 }
 
 .frame25 {
@@ -15,7 +19,7 @@
     align-items: flex-start;
 
     margin-left: 71px;
-    margin-top: 106px;
+    margin-top: 140px;
     width: 1124px;
     height: 558px;
     
@@ -34,6 +38,7 @@
 }
 
 .frame23 {
+    margin-top: 91px;
     gap: 32px;
     width: 677px;
     height: 166px;
@@ -57,7 +62,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    padding-top: 32px;
+    padding-top: 92px;
 }
 
 .joinButton2 {
@@ -80,6 +85,10 @@
     color: white;
     align-items: center;
     cursor: pointer;
+}
+
+#padding {
+    padding-top: 58.5px;
 }
 
 .cards {

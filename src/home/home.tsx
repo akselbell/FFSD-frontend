@@ -20,18 +20,26 @@ function Home() {
     return <>
         <Header />
         <Navbar />
-        <div className="frame24">
-            <div className="frame23">
-                <div className="title">
-                    Fee for Service Dentists
+        <div className="homeBackground">
+            <div className="frame24">
+                <div className="frame23">
+                    <div className="title">
+                        Fee for Service <br></br>
+                        Dentist Association
+                    </div>
+                    <div className="text">
+                        Discover a new era in dentistry with the Fee for Service Dentist Association. <br></br>
+                        Our mission is to support and empower dental professionals in providing exceptional care while embracing the freedom and flexibility of a fee-for-service model. <br></br>
+                        <br></br>
+                        Join us and unlock a world of opportunities for your dental practice.
+                    </div>
                 </div>
-                <div className="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                </div>
+                <div id="padding">
+                    <button className="joinButton2">
+                        Join
+                    </button>    
+                </div>    
             </div>
-            <button className="joinButton2">
-                Join
-            </button>            
         </div>
         <div className="frame25">
             Resources
