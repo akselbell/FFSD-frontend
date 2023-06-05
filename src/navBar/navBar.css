@@ -1,12 +1,11 @@
 .navbar {
     padding: 14px 30px;
     justify-content: space-between;
-
 }
 
 .navbar-cont {
     display: flex;
-    gap: 30px;
+    gap: 68px;
     align-items: center;
     flex-direction: row;
 }
@@ -38,7 +37,7 @@
     left: 56px;
     top: 46px;
     background: #1A237E;
-    border-radius: 16px;
+    border-radius: 26px;
     margin-left: 26px;
     text-decoration: none;
 }
@@ -48,7 +47,7 @@
     height: 44px;
     font-family: 'Inter';
     padding-left: calc(50% - 137px/2 + 0.5px);
-    padding-top: 20px;
+    padding-top: 17px;
 
     font-style: normal;
     font-weight: 900;
