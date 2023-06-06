@@ -25,7 +25,7 @@ function Join() {
                 
                 signUp(username, password, email).then(v => { // signUp only returns a string error if occurred
                     if(typeof v === "string") return console.error(v);
-                    window.location.href =  "/login";
+                    window.location.href =  "/login";         //now they are logged in already change this line to alert saying you've been signed in, verify email
                 }).catch(err => {
                     console.log(err);
                 });  
