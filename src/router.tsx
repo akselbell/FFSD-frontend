@@ -5,6 +5,7 @@ import About from "./about";
 import LogIn from "./login";
 import Join from "./join";
 import NotFound from "./404";
+import VerifyEmail from "./emailVerification";
 
 
 /**
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     makeRoute("/about", <About/>),
     makeRoute("/login", <LogIn/>),
     makeRoute("/join", <Join/>),
+    makeRoute("/verify-email", <VerifyEmail/>)
 ]);
 
 function SiteRouter() {
