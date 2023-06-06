@@ -9,7 +9,7 @@ function NotFound(){
         <Navbar/>
         <div className="not-found">
             <div><code className="error-status">404</code></div>
-            {window.location.pathname} doesn{"'"}t exist
+            Oops! Something went wrong. Please contact us if there is an issue.
         </div>
     </>;
 }
