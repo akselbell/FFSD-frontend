@@ -16,18 +16,15 @@ function VerifyEmail () {
             },
             body: JSON.stringify({ email_token: token })
         }).then(v => v.json())
-          .then( data => {
+            .then( data => {
             setError(data.error as boolean);
             if (data.error) {
                 setMessage(data.error);
                 return;
             }
             setMessage("Email sucessfully verified.");
-          });
-    }, []);
-
-
-    
+        });
+    });
     
     return <div>{message}</div>;
 }
