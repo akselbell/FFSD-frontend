@@ -56,13 +56,10 @@ function LogIn() {
         
                             <input className="loginButton" type="submit" value="Login" />
 
-                            <Link className="joinLoginButton" to="/forgot">
-                                <button className="joinLoginButton">Forgot Password?</button>
-                            </Link>
-
+                            <div className="notMember">Not a member? <Link className="joinLogin" to="/join">Join</Link></div>
+                            
+                            <Link className="forgotPass" to="/forgot">Forgot Password?</Link>
                         </form>
-                            {/*<Link className="joinLoginButton" to="/join">Join</Link>*/}
-                        {/*<div>{error}</div>*/}
                     </div>
                 </div>
                 }

@@ -104,3 +104,36 @@ label {
     height: 337px;
     background: linear-gradient(0deg, #F6F6F6, #F6F6F6), #FFFFFF;
 }
+
+.notMember {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #808080;
+    letter-spacing: 0.015em;
+}
+
+.joinLogin {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.015em;
+    color: #1A237E;
+    text-decoration: none;
+}
+
+.forgotPass {
+    padding-top: 12px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.015em;
+    color: #1A237E;
+    text-decoration: none;
+}
