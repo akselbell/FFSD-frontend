@@ -55,10 +55,12 @@ function LogIn() {
                         }}><div className="loginTitle">Login</div>
                             <label htmlFor="uname">Username: </label>
                             <input id="uname" type="text" name="uname" required />
-        
-                            <label htmlFor="pass">Password: </label>
+                            <div className="input-field">
+                                <label htmlFor="pass">Password: </label>
+                                <input id="password" type="password" name="pass" required />
 
-                            <input id="password" type="password" name="pass" required />
+                                <span>icon here</span>
+                            </div>
         
                             <input className="loginButton" type="submit" value="Login" />
 

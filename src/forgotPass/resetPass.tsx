@@ -22,7 +22,7 @@ function ResetPass() {
         }}>
             <div className="loginTitle">Reset Password</div>
                 <label htmlFor="pass">New Password: </label>
-                <input id="pass" type="text" name="pass" required />
+                <input id="pass" type="password" name="pass" required />
 
                 {/*add this twice and see if they match*/}
 
