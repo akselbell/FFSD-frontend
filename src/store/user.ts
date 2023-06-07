@@ -85,7 +85,6 @@ export const signUp = async (username: string, password: string, email: string):
 };
 
 export const forgotPass = async (email: string) => {
-    console.log("forgotPass function called");
     try {
         const res = await fetch("/api/forgot", {
             method: "POST",
@@ -94,7 +93,6 @@ export const forgotPass = async (email: string) => {
             },
             body: JSON.stringify({ email })
         }).then(v => v.json());
-        console.log("forgotPass function finished");
         return res;
     } catch (error) {
         console.log(error);
