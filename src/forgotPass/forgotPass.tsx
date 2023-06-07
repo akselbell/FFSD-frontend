@@ -5,14 +5,22 @@ import React, { useState } from "react";
 import { Alert } from '@mui/material';
 
 function ForgotPass() {
-    const [emailSent, setEmailSent] = useState(false); //change this to message, so it just displays whichever message is posted
+    const [error, setError] = useState(undefined); 
+    const [message, setMessage] = useState(undefined);
 
     return <>
         <form className="login" onSubmit={(e) => {
             e.preventDefault();
             const email = (document.getElementById("email") as HTMLInputElement).value;
             forgotPass(email).then(v => {
-                if (!v.error) setEmailSent(true);
+                if (v.error) {
+                    setError(v.error); 
+                    setMessage(undefined);
+                }
+                else if (v.message) {
+                    setMessage(v.message);
+                    setError(undefined);
+                }
             }).catch(error => console.log(error));
         }}>
             <div className="loginTitle">Forgot Password</div>
@@ -20,7 +28,8 @@ function ForgotPass() {
                 <input id="email" type="text" name="email" required />
 
                 <input className="loginButton" type="submit" value="Submit" />
-                {emailSent && <Alert severity="success">email sent successfully!</Alert>}
+                {error && <Alert severity="error">{error}</Alert>}
+                {message && <Alert severity="success">{message}</Alert>}
         </form>
     </>;
 }

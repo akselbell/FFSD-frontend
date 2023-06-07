@@ -3,9 +3,12 @@ import { resetPass } from "../store/user";
 import "./resetPass";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Alert } from "@mui/material";
 
 function ResetPass() {
-    const [resetSuccess, setResetSuccess] = useState(false);
+    const [error, setError] = useState(undefined);
+    const [message, setMessage] = useState(undefined);
+
     const { token } = queryString.parse(useLocation().search) as any; 
     return <>
         <form className="login" onSubmit={(e) => {
@@ -13,7 +16,8 @@ function ResetPass() {
             const password = (document.getElementById("pass") as HTMLInputElement).value;
             
             resetPass(token, password).then(v => {
-                if (v.message) setResetSuccess(true);
+                if (v.error) setError(v.error);
+                if(v.message) setMessage(v.message);
             }).catch((error) => console.log(error));
         }}>
             <div className="loginTitle">Reset Password</div>
@@ -23,7 +27,8 @@ function ResetPass() {
                 {/*add this twice and see if they match*/}
 
                 <input className="loginButton" type="submit" value="Submit" />
-                {resetSuccess &&  <div>Password reset!</div>}
+                {error && <Alert severity="error">{error}</Alert>}
+                {message && <Alert severity="success">{message}</Alert>}
         </form>
     </>;
 }
