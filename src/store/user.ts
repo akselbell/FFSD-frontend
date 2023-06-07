@@ -107,7 +107,7 @@ export const resetPass = async (passwordToken: string, password: string) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ password_token: passwordToken, password: password })
+            body: JSON.stringify({ password_token: passwordToken, password })
         }).then(v => v.json());
         return res;
     } catch (error) {
