@@ -48,8 +48,9 @@ function Join() {
                 <input type="submit" value="send" />
 
                 {error && <Alert severity="error">{error}</Alert>}
+                
+                <button>Pay Now</button>
             </form>
-            
         </div>
     </>;
 }
