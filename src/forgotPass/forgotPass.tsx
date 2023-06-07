@@ -2,9 +2,10 @@ import { error } from "console";
 import { forgotPass } from "../store/user";
 import "./forgotPass.css";
 import React, { useState } from "react";
+import { Alert } from '@mui/material';
 
 function ForgotPass() {
-    const [emailSent, setEmailSent] = useState(false);
+    const [emailSent, setEmailSent] = useState(false); //change this to message, so it just displays whichever message is posted
 
     return <>
         <form className="login" onSubmit={(e) => {
@@ -19,7 +20,7 @@ function ForgotPass() {
                 <input id="email" type="text" name="email" required />
 
                 <input className="loginButton" type="submit" value="Submit" />
-                {emailSent && <div>email sent sucessfully</div>}
+                {emailSent && <Alert severity="success">email sent successfully!</Alert>}
         </form>
     </>;
 }

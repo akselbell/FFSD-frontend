@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import Header from "../navBar/header";
 import Navbar from "../navBar";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout, setUser, userStateT, userT } from "../store/user";
+import { login, logout, setUser, userStateT } from "../store/user";
 import { Link } from "react-router-dom";
+import { Alert } from '@mui/material';
 /*
     dispatch(setUser({username: "bruh"} as userT))
     
@@ -19,6 +20,7 @@ import { Link } from "react-router-dom";
 */
 
 function LogIn() {
+    const [error, setError] = useState<string | null>(null);
     const dispatch = useDispatch();
     const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);       //this gets the state from user.ts
     
@@ -43,7 +45,10 @@ function LogIn() {
                             const password = (document.getElementById("password") as HTMLInputElement).value;
                             
                             login(username, password).then(userVal => {
-                                if(typeof userVal === "string") return console.error(userVal);
+                                if(typeof userVal === "string") {
+                                    setError(userVal);
+                                    return;
+                                }
                                 dispatch(setUser(userVal));
                             });
 
@@ -52,9 +57,12 @@ function LogIn() {
                             <input id="uname" type="text" name="uname" required />
         
                             <label htmlFor="pass">Password: </label>
+
                             <input id="password" type="password" name="pass" required />
         
                             <input className="loginButton" type="submit" value="Login" />
+
+                            {error && <Alert severity="error">{error}</Alert>}
 
                             <div className="notMember">Not a member? <Link className="joinLogin" to="/join">Join</Link></div>
                             
