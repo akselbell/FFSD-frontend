@@ -100,6 +100,22 @@ export const forgotPass = async (email: string) => {
     }
 };
 
+export const resetPass = async (passwordToken: string, password: string) => {
+    try {
+        const res = await fetch("/api/reset", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ password_token: passwordToken, password: password })
+        }).then(v => v.json());
+        return res;
+    } catch (error) {
+        console.log(error);
+        return "Something went wrong";
+    }
+};
+
 export const userSlice = createSlice({
     name: "user_state",
     initialState: {
