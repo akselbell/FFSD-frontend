@@ -23,7 +23,7 @@ import { EyeOff, Eye } from 'feather-icons-react';
 
 function LogIn() {
     const [error, setError] = useState<string | null>(null);
-    const [viewPass, setViewPass] = useState('password');
+    const [viewPass, setViewPass] = useState<string>('password');
     const [icon, setIcon] = useState(EyeOff);
 
     const dispatch = useDispatch();
@@ -75,7 +75,7 @@ function LogIn() {
                             <label htmlFor="pass">Password: </label>
                             <input id="password" type={viewPass} name="pass" required />
                             
-                            <span onClick={handleClick}><Icon icon={icon} size={22} /></span>
+                            <span onClick={handleClick}><Icon icon={icon}/></span>
 
                             <input className="loginButton" type="submit" value="Login" />
 
