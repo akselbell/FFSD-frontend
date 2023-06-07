@@ -8,8 +8,10 @@ function ForgotPass() {
 
     return <>
         <form className="login" onSubmit={(e) => {
+            console.log("forgotpass rendered");
             const email = (document.getElementById("email") as HTMLInputElement).value;
             forgotPass(email).then(v => {
+                console.log(v);
                 if (v.ok) setEmailSent(true);
             }).catch(error => console.log(error));
         }}>
