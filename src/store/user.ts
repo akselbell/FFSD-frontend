@@ -78,9 +78,9 @@ export const signUp = async (username: string, password: string, email: string):
         }).then(v => v.json());
         
         return res.error;
-    } catch (error) {
+    } catch (error: any) {
         console.error(error);
-        return "Something went wrong";
+        return error;
     }
 };
 
