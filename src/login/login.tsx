@@ -7,8 +7,7 @@ import { login, logout, setUser, userStateT } from "../store/user";
 import { Link } from "react-router-dom";
 import { Alert } from '@mui/material';
 import { Icon } from 'react-icons-kit';
-import { eyeOff } from 'react-icons-kit/feather/eyeOff';
-import { eye } from 'react-icons-kit/feather/eye';
+import { EyeOff, Eye } from 'feather-icons-react';
 /*
     dispatch(setUser({username: "bruh"} as userT))
     
@@ -24,9 +23,23 @@ import { eye } from 'react-icons-kit/feather/eye';
 
 function LogIn() {
     const [error, setError] = useState<string | null>(null);
+    const [viewPass, setViewPass] = useState('password');
+    const [icon, setIcon] = useState(EyeOff);
+
     const dispatch = useDispatch();
-    const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);       //this gets the state from user.ts
+    const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);//this gets the state from user.ts
     
+    const handleClick = () => {
+        if(viewPass === 'password') {
+            setIcon(Eye);
+            setViewPass('text');
+        }
+        else {
+            setIcon(EyeOff);
+            setViewPass('password');
+        }
+    };
+
     return <>
         <Header />
         <Navbar />
@@ -60,9 +73,9 @@ function LogIn() {
                             <input id="uname" type="text" name="uname" required />
                                 
                             <label htmlFor="pass">Password: </label>
-                            <input id="password" type="password" name="pass" required />
-
-                            <span><Icon icon={eyeOff} size={24} /></span>
+                            <input id="password" type={viewPass} name="pass" required />
+                            
+                            <span onClick={handleClick}><Icon icon={icon} size={22} /></span>
 
                             <input className="loginButton" type="submit" value="Login" />
 

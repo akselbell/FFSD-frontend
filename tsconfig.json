@@ -20,7 +20,7 @@
 },
 "include": [
     "src"
-],
+, "typings/feather-icons-react.d.ts"],
 "exclude": [
     "node_modules"
 ],
