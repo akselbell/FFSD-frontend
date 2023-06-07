@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, logout, setUser, userStateT } from "../store/user";
 import { Link } from "react-router-dom";
 import { Alert } from '@mui/material';
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 /*
     dispatch(setUser({username: "bruh"} as userT))
     
@@ -55,13 +58,12 @@ function LogIn() {
                         }}><div className="loginTitle">Login</div>
                             <label htmlFor="uname">Username: </label>
                             <input id="uname" type="text" name="uname" required />
-                            <div className="input-field">
-                                <label htmlFor="pass">Password: </label>
-                                <input id="password" type="password" name="pass" required />
+                                
+                            <label htmlFor="pass">Password: </label>
+                            <input id="password" type="password" name="pass" required />
 
-                                <span>icon here</span>
-                            </div>
-        
+                            <span><Icon icon={eyeOff} size={24} /></span>
+
                             <input className="loginButton" type="submit" value="Login" />
 
                             {error && <Alert severity="error">{error}</Alert>}
