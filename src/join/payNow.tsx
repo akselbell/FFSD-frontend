@@ -16,6 +16,8 @@ const PayNowButton: React.FC = () => {
       body: JSON.stringify({
         // Add any necessary payload data for subscription creation
         // e.g., plan ID, customer email, etc.
+        planID: "price_1NGpgqHeyT0BlJCPb4wNHfzU",
+        //customerEmail: "pascalbell16@gmail.com"               //change to reflect user email
       }),
     });
 

@@ -6,6 +6,7 @@ import { signUp, userT } from "../store/user";
 import { useSelector } from "react-redux";
 import { Alert } from '@mui/material';
 import Modal from 'react-modal';
+import PayNowButton from "./payNow";
 
 function Join() {
     const [error, setError] = useState<string | null>(null);
@@ -13,7 +14,6 @@ function Join() {
     const user: null | userT = useSelector((s: any)=> s.user_state.user); // how to access state
 
     const closePopup = () => { setPopupOpen(false); };
-    
     if (user) {                                                           //redirects to home if logged in alread
         window.location.href = "/";
         return <></>;
@@ -23,7 +23,6 @@ function Join() {
         <Header />
         <Navbar />
         <div>
-
             <form className="joinForm" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                 e.preventDefault();                             //prevents clearing the form for a new entry   
                 const form = e.target as HTMLFormElement;
@@ -36,7 +35,6 @@ function Join() {
                         setError(v);
                         return;
                     }
-
                     form.reset();
                     setPopupOpen(true);
                 }).catch(err => {
@@ -55,15 +53,14 @@ function Join() {
                 <input type="submit" value="send" />
 
                 {error && <Alert severity="error">{error}</Alert>}
-                
-                <button>Pay Now</button>
             </form>
             <Modal className="verificationPopup" isOpen={popupOpen} onRequestClose={closePopup}>
                 <div className="popupTitle">Let{"'"}s verify your email first</div>
                 <div className="popupText">A verification email was sent to [user_email_address]. Please click the link in the email to continue to payment.</div>
-                <button className="popupOKButton">OK</button>
+                <button className="popupOKButton" onClick={() => closePopup()}>OK</button>
             </Modal>
         </div>
+        <PayNowButton/>
     </>;
 }
 
