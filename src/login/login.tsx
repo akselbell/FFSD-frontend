@@ -7,7 +7,7 @@ import { login, logout, setUser, userStateT } from "../store/user";
 import { Link } from "react-router-dom";
 import { Alert } from '@mui/material';
 import { Icon } from 'react-icons-kit';
-import { EyeOff, Eye } from 'feather-icons-react';
+import { eye, eyeOff } from 'react-icons-kit/feather';
 /*
     dispatch(setUser({username: "bruh"} as userT))
     
@@ -19,76 +19,93 @@ import { EyeOff, Eye } from 'feather-icons-react';
             "username": "bruh"
         }
     })
+    input {
+    background-color: #F6F6F6;
+    width: 473px;
+    height: 48px;
+    box-sizing: border-box;
+    border: 1px solid #A2A2A2;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+
+    font-family: "Inter";
+    padding-left: 10px;
+    font-size: 16px;
+}
 */
 
 function LogIn() {
     const [error, setError] = useState<string | null>(null);
     const [viewPass, setViewPass] = useState<string>('password');
-    const [icon, setIcon] = useState(EyeOff);
+    const [icon, setIcon] = useState(eyeOff);
 
     const dispatch = useDispatch();
     const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);//this gets the state from user.ts
     
     const handleClick = () => {
         if(viewPass === 'password') {
-            setIcon(Eye);
+            setIcon(eye);
             setViewPass('text');
+            return;
         }
-        else {
-            setIcon(EyeOff);
-            setViewPass('password');
-        }
+        setIcon(eyeOff);
+        setViewPass('password');
     };
 
     return <>
         <Header />
         <Navbar />
-        <div>
-            {user ? "Hello " + user.username : ""}
-            {user ?
+        {user ?
+            <>
+                Hello {user.username}!
                 <div>
                     <div>Login sucessfull!</div>
                     <button onClick={() => {
                         dispatch(logout());
                     }}>logout</button>
                 </div>
-                :
-                <div className="backgroundLogin">
-                    <div className="loginContainer">
-                        <form className="login" onSubmit={(e) => {
-                            e.preventDefault();                             //prevents clearing the form for a new entry
-                            const username = (document.getElementById("uname") as HTMLInputElement).value;
-                            const password = (document.getElementById("password") as HTMLInputElement).value;
+            </>
+            :
+            <div className="backgroundLogin">
+                <div className="loginContainer">
+                    <form className="login" onSubmit={(e) => {
+                        e.preventDefault();                             //prevents clearing the form for a new entry
+                        const username = (document.getElementById("uname") as HTMLInputElement).value;
+                        const password = (document.getElementById("password") as HTMLInputElement).value;
+                        
+                        login(username, password).then(userVal => {
+                            if(typeof userVal === "string") {
+                                setError(userVal);
+                                return;
+                            }
+                            dispatch(setUser(userVal));
+                        });
+
+                    }}>
+                        {error && <Alert className="login-error" severity="error">{error}</Alert>}
+
+                        <div className="loginTitle">Login</div>
+                        <label className="login-label" htmlFor="uname">Username </label>
+                        <input id="uname" type="text" className="login-input" name="uname" required />
                             
-                            login(username, password).then(userVal => {
-                                if(typeof userVal === "string") {
-                                    setError(userVal);
-                                    return;
-                                }
-                                dispatch(setUser(userVal));
-                            });
+                        <label className="login-label" htmlFor="pass">Password </label>
+                        
+                        <span className="login-input passWrapper">
+                            <input className="hidden-input" id="password" type={viewPass} name="pass" required />
 
-                        }}><div className="loginTitle">Login</div>
-                            <label htmlFor="uname">Username: </label>
-                            <input id="uname" type="text" name="uname" required />
-                                
-                            <label htmlFor="pass">Password: </label>
-                            <input id="password" type={viewPass} name="pass" required />
+                            <Icon icon={icon} onClick={handleClick} size={22}/>
+                        </span>
                             
-                            <span onClick={handleClick}><Icon icon={icon}/></span>
+                        <input className="loginButton" type="submit" value="Login" />
 
-                            <input className="loginButton" type="submit" value="Login" />
-
-                            {error && <Alert severity="error">{error}</Alert>}
-
-                            <div className="notMember">Not a member? <Link className="joinLogin" to="/join">Join</Link></div>
-                            
-                            <Link className="forgotPass" to="/forgot">Forgot Password?</Link>
-                        </form>
-                    </div>
+                        <div className="notMember">Not a member? <Link className="joinLogin" to="/join">Join</Link></div>
+                        
+                        <Link className="forgotPass" to="/forgot">Forgot Password?</Link>
+                    </form>
                 </div>
-                }
-        </div>
+            </div>
+            }
         <div className="footerLogin"></div>
     </>;
 }
