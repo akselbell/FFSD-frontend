@@ -4,3 +4,67 @@
     width: 200px;
     margin: 100px;
 }
+
+.verificationPopup {
+    
+    width: 584px;
+    height: 420px;
+    margin-left: 31%;
+    margin-top: 14%;
+
+    /* FFS Background */
+    background: linear-gradient(0deg, #F6F6F6, #F6F6F6), #FFFFFF;
+    border-radius: 4px;
+}
+
+.popupTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.015em;
+    padding-left: 61px;
+    padding-top: 126px;
+    color: #000000;
+}
+
+.popupText {
+    width: 461px;
+    height: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    color: black;
+    padding-top: 24px;
+    padding-left: 61px;
+}
+
+.popupOKButton {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 16px;
+    gap: 10px;
+    display: flex;
+    width: 56px;
+    height: 35px;
+    margin-left: 61px;
+    margin-top: 40px;
+
+    /* FFS Light Blue */
+    background: #E4EBEE;
+    border-radius: 16px;
+    border: none;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.015em;
+    color: #0F0F0F;
+}

@@ -8,6 +8,7 @@ import NotFound from "./404";
 import VerifyEmail from "./emailVerification";
 import ForgotPass from "./forgotPass";
 import ResetPass from "./forgotPass/resetPass";
+import Payment from "./payment";
 
 
 /**
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
     makeRoute("/join", <Join/>),
     makeRoute("/verify-email", <VerifyEmail/>),
     makeRoute("/forgot", <ForgotPass/>),
-    makeRoute("/reset", <ResetPass/>)
+    makeRoute("/reset", <ResetPass/>),
+    makeRoute("/payment", <Payment/>)
 ]);
 
 function SiteRouter() {

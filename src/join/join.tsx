@@ -5,11 +5,14 @@ import Navbar from "../navBar";
 import { signUp, userT } from "../store/user";
 import { useSelector } from "react-redux";
 import { Alert } from '@mui/material';
-
+import Modal from 'react-modal';
 
 function Join() {
     const [error, setError] = useState<string | null>(null);
+    const [popupOpen, setPopupOpen] = useState<boolean>(false);
     const user: null | userT = useSelector((s: any)=> s.user_state.user); // how to access state
+
+    const closePopup = () => { setPopupOpen(false); };
     
     if (user) {                                                           //redirects to home if logged in alread
         window.location.href = "/";
@@ -20,8 +23,10 @@ function Join() {
         <Header />
         <Navbar />
         <div>
-            <form className="joinForm" onSubmit={(e) => {
+
+            <form className="joinForm" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                 e.preventDefault();                             //prevents clearing the form for a new entry   
+                const form = e.target as HTMLFormElement;
                 const username = (document.getElementById("uname") as HTMLInputElement).value;
                 const password = (document.getElementById("password") as HTMLInputElement).value;
                 const email = (document.getElementById("email") as HTMLInputElement).value;
@@ -31,7 +36,9 @@ function Join() {
                         setError(v);
                         return;
                     }
-                    window.location.href =  "/login";         //now they are logged in already change this line to alert saying you've been signed in, verify email
+
+                    form.reset();
+                    setPopupOpen(true);
                 }).catch(err => {
                     console.log(err);
                 });  
@@ -51,6 +58,11 @@ function Join() {
                 
                 <button>Pay Now</button>
             </form>
+            <Modal className="verificationPopup" isOpen={popupOpen} onRequestClose={closePopup}>
+                <div className="popupTitle">Let{"'"}s verify your email first</div>
+                <div className="popupText">A verification email was sent to [user_email_address]. Please click the link in the email to continue to payment.</div>
+                <button className="popupOKButton">OK</button>
+            </Modal>
         </div>
     </>;
 }
