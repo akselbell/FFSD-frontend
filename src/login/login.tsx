@@ -70,7 +70,7 @@ function LogIn() {
             <div className="backgroundLogin">
                 <div className="loginContainer">
                     <form className="login" onSubmit={(e) => {
-                        e.preventDefault();                             //prevents clearing the form for a new entry
+                        e.preventDefault();
                         const username = (document.getElementById("uname") as HTMLInputElement).value;
                         const password = (document.getElementById("password") as HTMLInputElement).value;
                         

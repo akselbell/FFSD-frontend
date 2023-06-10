@@ -8,7 +8,7 @@ const PayNowButton: React.FC = () => {
     const stripe: Stripe | null = await stripePromise;
 
     // Create a checkout session on the server
-    const response = await fetch('/create-checkout-session', {
+    const response = await fetch('/api/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,21 +16,20 @@ const PayNowButton: React.FC = () => {
       body: JSON.stringify({
         // Add any necessary payload data for subscription creation
         // e.g., plan ID, customer email, etc.
-        planID: "price_1NGpgqHeyT0BlJCPb4wNHfzU",
+        planId: "price_1NGpgqHeyT0BlJCPb4wNHfzU",
         //customerEmail: "pascalbell16@gmail.com"               //change to reflect user email
       }),
-    });
+    }).then(v => v.json());
 
-    const session = await response.json();
 
     // Redirect to the Stripe checkout page
     if (stripe) {
       const result = await stripe.redirectToCheckout({
-        sessionId: session.id,
+        sessionId: response.id,
       });
 
       if (result.error) {
-        console.error(result.error);
+        console.error("error redirecting" + result.error);
         // Handle any error during redirection
       }
     }

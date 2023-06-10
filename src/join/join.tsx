@@ -12,6 +12,7 @@ function Join() {
     const [error, setError] = useState<string | null>(null);
     const [popupOpen, setPopupOpen] = useState<boolean>(false);
     const user: null | userT = useSelector((s: any)=> s.user_state.user); // how to access state
+    const [email, setEmail] = useState("");
 
     const closePopup = () => { setPopupOpen(false); };
     if (user) {                                                           //redirects to home if logged in alread
@@ -30,11 +31,12 @@ function Join() {
                 const password = (document.getElementById("password") as HTMLInputElement).value;
                 const email = (document.getElementById("email") as HTMLInputElement).value;
                 
-                signUp(username, password, email).then(v => { // signUp only returns a string error if occurred
-                    if(typeof v === "string") {
+                signUp(username, password, email).then((v: any) => {
+                    if(v.error) {
                         setError(v);
                         return;
                     }
+                    setEmail(v.encrypted_email);
                     form.reset();
                     setPopupOpen(true);
                 }).catch(err => {
@@ -54,9 +56,12 @@ function Join() {
 
                 {error && <Alert severity="error">{error}</Alert>}
             </form>
-            <Modal className="verificationPopup" isOpen={popupOpen} onRequestClose={closePopup}>
+            <Modal className="verificationPopup" isOpen={popupOpen} onRequestClose={closePopup} ariaHideApp={false} style={{
+                overlay: {
+                backgroundColor: 'rgba(0, 0, 0, 0.5)', /* Adjust the opacity as needed */
+                }}}>
                 <div className="popupTitle">Let{"'"}s verify your email first</div>
-                <div className="popupText">A verification email was sent to [user_email_address]. Please click the link in the email to continue to payment.</div>
+                <div className="popupText">A verification email was sent to {email}. Please click the link in the email to continue to payment.</div>
                 <button className="popupOKButton" onClick={() => closePopup()}>OK</button>
             </Modal>
         </div>
