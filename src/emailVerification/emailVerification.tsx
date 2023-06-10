@@ -23,7 +23,7 @@ function VerifyEmail () {
             }
             window.location.href = "/NotFound";
         });
-    });
+    }, []);
     
     return <div></div>;
 }
