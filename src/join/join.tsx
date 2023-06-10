@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { Alert } from '@mui/material';
 import Modal from 'react-modal';
 import PayNowButton from "./payNow";
+import validator from 'validator';
 
 function Join() {
     const [error, setError] = useState<string | null>(null);
@@ -30,14 +31,20 @@ function Join() {
                 const username = (document.getElementById("uname") as HTMLInputElement).value;
                 const password = (document.getElementById("password") as HTMLInputElement).value;
                 const email = (document.getElementById("email") as HTMLInputElement).value;
+
+                if(!validator.isEmail(email)) {
+                    setError("Invalid email address");
+                    return;
+                }
                 
                 signUp(username, password, email).then((v: any) => {
                     if(v.error) {
-                        setError(v);
+                        setError(v.error);
                         return;
                     }
                     setEmail(v.encrypted_email);
                     form.reset();
+                    setError(null);
                     setPopupOpen(true);
                 }).catch(err => {
                     console.log(err);
