@@ -69,13 +69,15 @@ function LogIn() {
             :
             <div className="backgroundLogin">
                 <div className="loginContainer">
-                    <form className="login" onSubmit={(e) => {
+                    <form className="login" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                         e.preventDefault();
+                        const form = e.target as HTMLFormElement;
                         const username = (document.getElementById("uname") as HTMLInputElement).value;
                         const password = (document.getElementById("password") as HTMLInputElement).value;
                         
                         login(username, password).then(userVal => {
                             if(typeof userVal === "string") {
+                                form.reset();
                                 setError(userVal);
                                 return;
                             }

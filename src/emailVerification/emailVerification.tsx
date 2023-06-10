@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
-import { useState } from "react";
 import queryString from 'query-string';
 
 function VerifyEmail () {
-    const [message, setMessage] = useState("");
     const { token } = queryString.parse(useLocation().search);     //returns an object with all the query parameters and selects "token" parameter
 
+    console.log("hi");
+
     useEffect( () => {
+        console.log("hey");
         fetch("/api/verify-email", {
             method: "POST",
             headers: {
@@ -24,7 +25,7 @@ function VerifyEmail () {
         });
     });
     
-    return <div>{message}</div>;
+    return <div></div>;
 }
 
 export default VerifyEmail;
