@@ -3,7 +3,7 @@ import { loadStripe, Stripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe('pk_test_51NGSqcHeyT0BlJCP8hE7cXbVaclnvLtNxnlpIQtFsKbNW6mmTrMEZrPio7UprjIqM8h8qkxxFRVgRBlNkgBYPg0o00Nh6XPdhY');
 
-const PayNowButton: React.FC = () => {
+const PayNowButton: React.FC<{ email: string }> = ({ email }) => {
   const handleClick = async () => {
     const stripe: Stripe | null = await stripePromise;
 
@@ -17,7 +17,7 @@ const PayNowButton: React.FC = () => {
         // Add any necessary payload data for subscription creation
         // e.g., plan ID, customer email, etc.
         planId: "price_1NGpgqHeyT0BlJCPb4wNHfzU",
-        //customerEmail: "pascalbell16@gmail.com"               //change to reflect user email
+        customerEmail: email               //change to reflect user email
       }),
     }).then(v => v.json());
 

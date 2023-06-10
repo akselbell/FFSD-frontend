@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./join.css";
 import Header from "../navBar/header";
 import Navbar from "../navBar";
@@ -12,19 +12,26 @@ import validator from 'validator';
 function Join() {
     const [error, setError] = useState<string | null>(null);
     const [popupOpen, setPopupOpen] = useState<boolean>(false);
-    const user: null | userT = useSelector((s: any)=> s.user_state.user); // how to access state
+    const user: any = useSelector((s: any)=> s.user_state.user); // how to access state
+    const [emailValid, setEmailValid] = useState(false);
     const [email, setEmail] = useState("");
 
     const closePopup = () => { setPopupOpen(false); };
-    if (user) {                                                           //redirects to home if logged in alread
-        window.location.href = "/";
-        return <></>;
-    }
+    
+    useEffect(() => {
+        if (user) {                                                           //redirects to home if logged in already
+            if (user.email_valid) {
+                setEmailValid(true);
+                setEmail(user.encrypted_email);
+            }
+        }
+    },[user]);
 
     return <>
         <Header />
         <Navbar />
-        <div>
+        {emailValid ? <PayNowButton email={email}/> :
+            <div>
             <form className="joinForm" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                 e.preventDefault();                             //prevents clearing the form for a new entry   
                 const form = e.target as HTMLFormElement;
@@ -42,6 +49,7 @@ function Join() {
                         setError(v.error);
                         return;
                     }
+                    setError(null);
                     setEmail(v.encrypted_email);
                     form.reset();
                     setError(null);
@@ -72,7 +80,7 @@ function Join() {
                 <button className="popupOKButton" onClick={() => closePopup()}>OK</button>
             </Modal>
         </div>
-        <PayNowButton/>
+        }
     </>;
 }
 
