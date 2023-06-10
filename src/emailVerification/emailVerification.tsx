@@ -5,8 +5,6 @@ import queryString from 'query-string';
 function VerifyEmail () {
     const { token } = queryString.parse(useLocation().search);     //returns an object with all the query parameters and selects "token" parameter
 
-    console.log("hi");
-
     useEffect( () => {
         console.log("hey");
         fetch("/api/verify-email", {

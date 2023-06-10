@@ -13,9 +13,7 @@ if(!root) {
 }
 
 createRoot(root).render(
-    <React.StrictMode>
-        <Provider store={store}>        {/*provides global state to app*/}
-            <SiteRouter />
-        </Provider>
-    </React.StrictMode>
+    <Provider store={store}>        {/*provides global state to app*/}
+        <SiteRouter />
+    </Provider>
 );
