@@ -75,11 +75,15 @@ function LogIn() {
                         const username = (document.getElementById("uname") as HTMLInputElement).value;
                         const password = (document.getElementById("password") as HTMLInputElement).value;
                         
-                        login(username, password).then(userVal => {
+                        login(username, password).then((userVal: any) => {
                             if(typeof userVal === "string") {
                                 form.reset();
                                 setError(userVal);
                                 return;
+                            }
+                            if (!userVal.stripe_id || !userVal.expiration_date || userVal.expiration_date <= new Date()) {
+                                dispatch(setUser(userVal));
+                                window.location.href = "/join";
                             }
                             dispatch(setUser(userVal));
                         });
