@@ -94,7 +94,6 @@
     line-height: 19px;
     cursor:pointer;
     text-decoration: none;
-    border: none;
 }
 
 .joinNavbar {
@@ -102,6 +101,7 @@
     width: 66px;
     height: 35px;
     border-radius: 16px;
+    border: none;
 }
 
 #join:hover {

@@ -100,7 +100,7 @@ function LogIn() {
                         <span className="login-input passWrapper">
                             <input className="hidden-input" id="password" type={viewPass} name="pass" required />
 
-                            <Icon icon={icon} onClick={handleClick} size={22}/>
+                            <Icon style={{cursor: "pointer"}} icon={icon} onClick={handleClick} size={22}/>
                         </span>
                             
                         <input className="loginButton" id="join" type="submit" value="Login" />
@@ -112,7 +112,7 @@ function LogIn() {
                 </div>
             </div>
             }
-        <div className="footerLogin"></div>
+        <div className="footer"></div>
     </>;
 }
 

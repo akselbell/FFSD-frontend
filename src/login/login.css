@@ -99,12 +99,6 @@ label {
     border-radius: 36px;
 }
 
-.footerLogin {
-    width: 100%;
-    height: 337px;
-    background: linear-gradient(0deg, #F6F6F6, #F6F6F6), #FFFFFF;
-}
-
 .notMember {
     font-family: "Inter";
     font-style: normal;
