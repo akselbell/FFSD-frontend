@@ -85,14 +85,8 @@
 }
 
 #join {
-    padding: 8px 16px;
-    width: 66px;
-    height: 35px;
     background: #1A237E;
     color: white;
-    border-radius: 16px;
-    border: none;
-    
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
@@ -100,4 +94,17 @@
     line-height: 19px;
     cursor:pointer;
     text-decoration: none;
+    border: none;
+}
+
+.joinNavbar {
+    padding: 8px 16px;
+    width: 66px;
+    height: 35px;
+    border-radius: 16px;
+}
+
+#join:hover {
+    background-color: #484F98;
+    transition: 0.5ms;
 }

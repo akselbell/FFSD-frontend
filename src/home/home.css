@@ -65,26 +65,16 @@
     padding-top: 92px;
 }
 
-.joinButton2 {
+.joinHome {
     display: flex;
     justify-content: center;
     padding: 8px 16px;
     gap: 10px;
-    background: #1A237E;
-    border: none;
 
     width: 162px;
     height: 56px;
     border-radius: 36px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    color: white;
     align-items: center;
-    cursor: pointer;
 }
 
 #padding {

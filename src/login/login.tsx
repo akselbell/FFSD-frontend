@@ -103,7 +103,7 @@ function LogIn() {
                             <Icon icon={icon} onClick={handleClick} size={22}/>
                         </span>
                             
-                        <input className="loginButton" type="submit" value="Login" />
+                        <input className="loginButton" id="join" type="submit" value="Login" />
 
                         <div className="notMember">Not a member? <Link className="joinLogin" to="/join">Join</Link></div>
                         

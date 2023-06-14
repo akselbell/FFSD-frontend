@@ -56,7 +56,7 @@
     margin-top: 40px;
 
     /* FFS Light Blue */
-    background: #E4EBEE;
+    background: #AFCF4E;
     border-radius: 16px;
     border: none;
 
@@ -68,4 +68,8 @@
     letter-spacing: 0.015em;
     color: #0F0F0F;
     cursor: pointer;
+}
+
+.popupOKButton:hover {
+    background-color: #97B245;
 }

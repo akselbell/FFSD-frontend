@@ -35,7 +35,7 @@ function Home() {
                     </div>
                 </div>
                 <div id="padding">
-                    <button className="joinButton2">
+                    <button className="joinHome" id="join">
                         Join
                     </button>    
                 </div>    

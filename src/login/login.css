@@ -96,19 +96,7 @@ label {
 .joinLoginButton {
     width: 473px;
     height: 56px;
-
-    background: #1A237E;
-    color: white;
     border-radius: 36px;
-    border: none;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    cursor:pointer;
-    text-decoration: none;
 }
 
 .footerLogin {
