@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #E4EBEE;
     display: flex;
+    justify-content: space-between;
 }
 
 .leftHome {
@@ -10,7 +11,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 60px;
-    width: 600px;
+    width: 520px;
     height: 292px;
     z-index: 30;
     margin-left: 71px;
@@ -99,7 +100,6 @@
 }
 
 .rightHome {
-    align-self: flex-end;
     height: 515px;
 
 }
@@ -110,10 +110,11 @@
 }
 
 .gradient {
-    align-self: flex-start; 
     width: 156px;
-    top: 135px;
-    background: linear-gradient(89.34deg, #E4EBEE 13.32%, rgba(217, 217, 217, 0) 91.59%);
+    /* top: 135px; */
+    background: linear-gradient(90deg, #E4EBEE 13.32%, rgba(217, 217, 217, 0) 91.59%);
     mix-blend-mode: normal;
-    z-index: 20;
+    height: 515px;
+    /*background-color: red;*/
+    position: absolute;
 }
