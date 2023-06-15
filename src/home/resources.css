@@ -1,9 +1,7 @@
 .container {
     width: 324px; /*real dimensions are 348*/
-    height: 467px;
     display: flex;
     flex-direction: column;
-    padding-top: 38px;
 }
 
 .imageResource {
@@ -19,7 +17,6 @@
 }
 
 .resourceText {
-    height: 67px;
     width: 273px;
     padding-left: 31px;
     font-weight: 500;

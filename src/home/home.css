@@ -20,11 +20,10 @@
 .frame25 {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-left: 71px;
-    margin-top: 140px;
-    width: 1124px;
-    height: 558px;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    gap: 39px;
     
     font-family: "Inter";
     font-style: normal;
