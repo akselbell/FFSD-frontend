@@ -52,6 +52,14 @@ function Home() {
                 })}
             </div>
         </div>
+        <div className="frame26">
+                <p className="uniqueChallenges">
+                    We understand the unique challenges of a fee-for-service practice.
+                </p>
+                <p className="uniqueChallengesTxt">
+                    Your membership fee provides access to resources that will eliminate many of the services you pay for now, saving you thousands each year!
+                </p>
+        </div>
         <div className="footer"></div>
     </>;
 }

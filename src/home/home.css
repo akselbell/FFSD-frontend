@@ -62,8 +62,9 @@
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 24px;
     padding-top: 92px;
+    letter-spacing: 0.01em;
 }
 
 .joinHome {
@@ -80,7 +81,7 @@
 }
 
 #padding {
-    padding-top: 58.5px;
+    padding-top: 75px;
 }
 
 .cards {
@@ -128,5 +129,34 @@
     font-size: 16px;
     line-height: 24px;
     /* or 150% */
+    letter-spacing: 0.015em;
+}
+
+.frame26 {
+    width: 100%;
+    height: 326px;
+    background: #E4EBEE;
+}
+
+.uniqueChallenges {
+    height: 24px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #0F0F0F;
+    padding-top: 119px;
+}
+
+.uniqueChallengesTxt {
+    padding-top: 25px;
+    width: 749px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
     letter-spacing: 0.015em;
 }
