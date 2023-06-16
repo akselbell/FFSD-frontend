@@ -72,7 +72,26 @@ function Home() {
             </button>  
         </div>
         <div className="frame27">
-
+                <div className="impactLeft">
+                    <p className="ourImpact">
+                        Our Impact
+                    </p>
+                    <p className="ourImpactTxt">
+                    Our work directly impacts independent dentists in the US and provides access to a community of like-minded dental professionals who are reshaping the landscape of dentistry.
+                    </p>
+                    <p className="number">
+                        170
+                    </p>
+                    <p className="thousand">
+                        THOUSAND
+                    </p>
+                    <p className="support">
+                        We support the 170 thousand independent dentists in the US with our services
+                    </p>
+                </div>
+                <div className="impactRight">
+                    Resources
+                </div>
         </div>
         <div className="footer"></div>
     </>;
