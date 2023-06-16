@@ -192,7 +192,11 @@
     background: #E4EBEE;
     justify-content: space-between;
     display: flex;
-    padding: 0 71px;
+    padding-left: 71px;
+}
+
+.impactLeft {
+    width: 350px;
 }
 
 .ourImpact {
@@ -219,7 +223,7 @@
     font-size: 149.673px;
     line-height: 181px;
     letter-spacing: 0.005em;
-    margin: 40px 150px 0px 0;
+    margin: 40px 0 0px 30px;
     text-align: center;
 }
 
@@ -228,7 +232,7 @@
     font-weight: 500;
     font-size: 32px;
     line-height: 39px;
-    margin: -20px 150px 0 0;
+    margin: -20px 0 0 30px;
     text-align: center;
     letter-spacing: 0.005em;
 }
@@ -244,4 +248,13 @@
 }
 
 .impactRight {
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
+    background: #F6F6F6;
+    width: 1003px;
+}
+
+.impactResourcesWrapper {
+    height: 427.89px;
+    margin: 200px 71px 0 0;
+
 }

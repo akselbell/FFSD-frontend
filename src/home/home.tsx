@@ -2,12 +2,15 @@ import React from "react";
 import Navbar from "../navBar";
 import Header from "../navBar/header";
 import Resource from "./resources";
+import ImpactResource from "./impactResources";
 import "./home.css";
 
 const resources = [{image: "../Rectangle 100.jpg", alt: "Practice Management", title: "Practice Management", text: "Templates for weekly staff meetings, job-based to-do lists, and office checklists"},
     {image: "../Rectangle 100-2.jpg", alt: "Human Resources", title: "Human Resources", text: "Job descriptions, phone scripts, and more"},
     {image: "../Rectangle 100-3.jpg", alt: "Marketing", title: "Marketing", text: "Social media posts, monthly patient emails, and new patient materials"}
 ];
+
+const impactResources = [{text: "Resources in our HR Tool Kit to make recruiting, hiring, training, and even firing a breeze."}];
 
 function Home() {
     return <>
@@ -90,7 +93,11 @@ function Home() {
                     </p>
                 </div>
                 <div className="impactRight">
-                    Resources
+                    <div className="impactResourcesWrapper">
+                    {impactResources.map((word, index) => {
+                        return <ImpactResource text={word.text} key={index}/>;
+                    })}
+                    </div>
                 </div>
         </div>
         <div className="footer"></div>
