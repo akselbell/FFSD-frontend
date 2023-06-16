@@ -1,17 +1,17 @@
 .container {
-    width: 324px; /*real dimensions are 348*/
+    width: 350px; /*real dimensions are 348*/
     display: flex;
     flex-direction: column;
-}
-
-.imageResource {
-    width: 324px;   /*real dimensions are 348*/
-    height: 189px;
+    background: #FFFFFF;
 }
 
 .resourceTitle {
     font-size: 16px;
     font-weight: 700;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
     padding-top: 30px;
     padding-left: 31px;
 }
@@ -23,4 +23,6 @@
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.015em;
+    padding-top: 16px;
+    padding-bottom: 40px;
 }

@@ -1,6 +1,6 @@
 html, body, #root, .app {
     font-family: "DM Sans", sans-serif;
-    background-color: white;
+    background-color: #F6F6F6;
     flex-direction: column;
     padding: 0;
     margin: 0;
