@@ -60,6 +60,20 @@ function Home() {
                     Your membership fee provides access to resources that will eliminate many of the services you pay for now, saving you thousands each year!
                 </p>
         </div>
+        <p className="dropInsurance">
+            Drop Insurance
+        </p>
+        <p className="dropInsuranceTxt">
+            We know there are programs out there that charge you thousands to help you become an independent provider. With your membership, we include the tools you need to drop insurance and become a fee-for-service provider. Want to create your own discount plan? We provide the resources for you to do that without having to pay an outside entity to manage it.
+        </p>
+        <div id="padding2">
+            <button className="joinHome" id="join">
+                Join
+            </button>  
+        </div>
+        <div className="frame27">
+
+        </div>
         <div className="footer"></div>
     </>;
 }

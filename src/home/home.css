@@ -84,6 +84,10 @@
     padding-top: 75px;
 }
 
+#padding2 {
+    padding: 24px 0 118px 71px;
+}
+
 .cards {
     margin-left: 71px;
     height: 2662px;
@@ -136,27 +140,54 @@
     width: 100%;
     height: 326px;
     background: #E4EBEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .uniqueChallenges {
     height: 24px;
     font-family: 'Inter';
-    font-weight: 700;
+    font-weight: 800;
     font-size: 24px;
     line-height: 24px;
-    text-align: center;
     letter-spacing: 0.015em;
     color: #0F0F0F;
-    padding-top: 119px;
+
 }
 
 .uniqueChallengesTxt {
-    padding-top: 25px;
-    width: 749px;
     font-family: 'Inter';
     font-style: normal;
     font-size: 16px;
+    font-weight: 500;
     line-height: 24px;
-    text-align: center;
+    width: 749px;
     letter-spacing: 0.015em;
+    text-align: center;
+}
+
+.dropInsurance {
+    font-family: 'Inter';
+    font-weight: 800;
+    font-size: 36px;
+    margin-left: 71px;
+    padding-top: 111px;
+}
+
+.dropInsuranceTxt {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    width: 749px;
+    margin-left: 71px;
+}
+
+.frame27 {
+    height: 627.89px;
+    background: #E4EBEE;
 }
