@@ -8,7 +8,6 @@ import { Alert } from '@mui/material';
 import Modal from 'react-modal';
 import PayNowButton from "./payNow";
 import validator from 'validator';
-import PortalButton from "./portal";
 
 function Join() {
     const [error, setError] = useState<string | null>(null);
@@ -33,7 +32,6 @@ function Join() {
         <Navbar />
         {emailValid ? <div>
             <PayNowButton email={email}/>
-            <PortalButton email={email}/>
             </div>:
             <div>
             <form className="joinForm" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {

@@ -83,6 +83,12 @@
     text-decoration: none;
 }
 
+#logout {
+    text-decoration: none;
+    outline: none;
+    color: #9B2222;
+}
+
 #join {
     background: #1A237E;
     color: white;

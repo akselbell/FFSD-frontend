@@ -81,9 +81,10 @@ function LogIn() {
                                 setError(userVal);
                                 return;
                             }
-                            if (!userVal.stripe_id || !userVal.expiration_date || userVal.expiration_date <= new Date()) {
+                            if (!userVal.valid_subscription) {
                                 dispatch(setUser(userVal));
                                 window.location.href = "/join";
+                                return;
                             }
                             dispatch(setUser(userVal));
                         });

@@ -12,7 +12,8 @@ export type userT = {
     email: string,
     email_valid: boolean,
     created_at: Date,
-    error?: string
+    error?: string,
+    valid_subscription?: string
 }
 
 export type userStateT = {
@@ -35,6 +36,17 @@ export const fetchMe = async (): Promise<userT | string> => {
     }
 };
 
+export const portalButton = async () => {
+    const response = await fetch("/api/create-portal-session", { method: "POST",}).then(v => v.json());
+
+    if (response.error) {
+        window.location.href = "/join";
+        return;
+    }
+    window.open(response.portalSession, '_blank');
+    return;
+};
+
 /**
  * @description logs in user with username and password
  * @param {string} username
@@ -52,7 +64,7 @@ export const login = async (username: string, password: string): Promise<userT |
         }).then(v => v.json());
 
         if(user.error) return user.error;
-
+        console.log(user);
         return user;
     } catch(err) {
         console.error(err);
