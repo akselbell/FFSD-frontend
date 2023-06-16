@@ -219,7 +219,8 @@
     font-size: 149.673px;
     line-height: 181px;
     letter-spacing: 0.005em;
-    margin: 40px 0 0px 0;
+    margin: 40px 150px 0px 0;
+    text-align: center;
 }
 
 .thousand {
@@ -227,6 +228,20 @@
     font-weight: 500;
     font-size: 32px;
     line-height: 39px;
-    margin-top: -20px;
+    margin: -20px 150px 0 0;
+    text-align: center;
     letter-spacing: 0.005em;
+}
+
+.support {
+    width: 388px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    margin-top: 32px;
+}
+
+.impactRight {
 }
