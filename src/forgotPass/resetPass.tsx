@@ -17,8 +17,9 @@ function ResetPass() {
         <Navbar/>
         <div className="backgroundLogin">
             <div className="loginContainer">
-                <form className="login" onSubmit={(e) => {
+                <form className="login" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                     e.preventDefault();
+                    const form = e.target as HTMLFormElement;
                     const password = (document.getElementById("pass") as HTMLInputElement).value;
                     const confirmPass = (document.getElementById("confirmPass") as HTMLInputElement).value;
                     setError("");
@@ -27,6 +28,7 @@ function ResetPass() {
                         resetPass(token, password).then(v => {
                             if (v.error) setError(v.error);
                             if(v.message) setMessage(v.message);
+                            form.reset();
                         }).catch((error) => console.log(error));
                         return;
                     }

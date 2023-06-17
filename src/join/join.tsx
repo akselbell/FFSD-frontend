@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./join.css";
 import Header from "../navBar/header";
 import Navbar from "../navBar";
-import { signUp, userT } from "../store/user";
+import { signUp } from "../store/user";
 import { useSelector } from "react-redux";
 import { Alert } from '@mui/material';
 import Modal from 'react-modal';
@@ -31,7 +31,7 @@ function Join() {
         <Header />
         <Navbar />
         {emailValid ? <div>
-            <PayNowButton email={email}/>
+                <PayNowButton email={email} user={user}/>
             </div>:
             <div>
             <form className="joinForm" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {

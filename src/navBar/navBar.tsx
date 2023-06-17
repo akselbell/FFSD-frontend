@@ -29,7 +29,12 @@ function Navbar() {
                             <span onClick={portalButton}>Manage Subscription</span>
                         </div>
                         <Link className="logIn" id="logout" to="/">
-                            <span onClick={() => {dispatch(logout());}}>Logout</span>
+                            <span onClick={() => {
+                                dispatch(logout());
+                                window.location.href = "/login";
+                            }}>
+                                    Logout
+                            </span>
                         </Link>
                     </div>
                 </div> 

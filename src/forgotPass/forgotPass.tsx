@@ -16,8 +16,9 @@ function ForgotPass() {
         <Navbar/>
         <div className="backgroundLogin">
             <div className="loginContainer">
-                <form className="login" onSubmit={(e) => {
+                <form className="login" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                     e.preventDefault();
+                    const form = e.target as HTMLFormElement;
                     const email = (document.getElementById("email") as HTMLInputElement).value;
                     forgotPass(email).then(v => {
                         if (v.error) {
@@ -28,6 +29,7 @@ function ForgotPass() {
                             setMessage(v.message);
                             setError(undefined);
                         }
+                        form.reset();
                     }).catch(error => console.log(error));
                 }}>
                     <div className="loginTitle">Forgot Password?</div>
