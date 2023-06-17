@@ -10,7 +10,9 @@ const resources = [{image: "../Rectangle 100.jpg", alt: "Practice Management", t
     {image: "../Rectangle 100-3.jpg", alt: "Marketing", title: "Marketing", text: "Social media posts, monthly patient emails, and new patient materials"}
 ];
 
-const impactResources = [{text: "Resources in our HR Tool Kit to make recruiting, hiring, training, and even firing a breeze."}];
+const impactResources = [{text: "Resources in our HR Tool Kit to make recruiting, hiring, training, and even firing a breeze."},
+    {text: "Resources in our PM Tool Kit to streamline everyday operations from systems and processes to agendas for monthly meetings."},
+    {text: "Resources in our Marketing Tool Kit. Access templates for patient communications, monthly marketing emails, and even social media posts."}];
 
 function Home() {
     return <>
