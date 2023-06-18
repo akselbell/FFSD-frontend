@@ -1,8 +1,28 @@
-.joinForm {
+.joinPage {
+    background-color: #E4EBEE;
+    height: 861px;
     display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin: 100px;
+    justify-content: space-around;
+}
+
+.joinContainer {
+    height: 774px;
+    width: 1191px;
+    background-color: white;
+    margin-top: 44px;
+    display: flex;
+}
+
+.joinRow {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 71px;
+}
+
+#joinTxt {
+    width: 883px;
+    height: 72px;
+    padding-bottom: 50px;
 }
 
 .verificationPopup {

@@ -33,46 +33,63 @@ function Join() {
         {emailValid ? <div>
                 <PayNowButton email={email} user={user}/>
             </div>:
-            <div>
-            <form className="joinForm" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
-                e.preventDefault();                             //prevents clearing the form for a new entry   
-                const form = e.target as HTMLFormElement;
-                const username = (document.getElementById("uname") as HTMLInputElement).value;
-                const password = (document.getElementById("password") as HTMLInputElement).value;
-                const email = (document.getElementById("email") as HTMLInputElement).value;
+        <>
+            <div className="joinPage">
+                <div className="joinContainer">
+                    <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+                        e.preventDefault();                             //prevents clearing the form for a new entry   
+                        const form = e.target as HTMLFormElement;
+                        const username = (document.getElementById("uname") as HTMLInputElement).value;
+                        const password = (document.getElementById("password") as HTMLInputElement).value;
+                        const email = (document.getElementById("email") as HTMLInputElement).value;
 
-                if(!validator.isEmail(email)) {
-                    setError("Invalid email address");
-                    return;
-                }
-                
-                signUp(username, password, email).then((v: any) => {
-                    if(v.error) {
-                        setError(v.error);
-                        return;
-                    }
-                    setError(null);
-                    setEmail(v.encrypted_email);
-                    form.reset();
-                    setError(null);
-                    setPopupOpen(true);
-                }).catch(err => {
-                    console.log(err);
-                });  
-            }}>
-                <label htmlFor="uname"><b>Username: </b></label>
-                <input id="uname" type="text" placeholder="Type your username" name="uname" required />
+                        if(!validator.isEmail(email)) {
+                            setError("Invalid email address");
+                            return;
+                        }
+                        
+                        signUp(username, password, email).then((v: any) => {
+                            if(v.error) {
+                                setError(v.error);
+                                return;
+                            }
+                            setError(null);
+                            setEmail(v.encrypted_email);
+                            form.reset();
+                            setError(null);
+                            setPopupOpen(true);
+                        }).catch(err => {
+                            console.log(err);
+                        });  
+                    }}>
+                        <div className="loginTitle">Join Now</div>
+                        <div className="forgotPassTxt" id="joinTxt">Join the Fee for Service Dentist Association today and become part of a dynamic network of dental professionals dedicated to elevating dentistry to new heights. Gain access to exclusive resources, educational programs, and a supportive community that will propel your practice forward. </div>
+                        <div className="joinRow">
+                            <label htmlFor="prefix"><b>Prefix</b></label>
+                            <input id="prefix" type="text" name="prefix"/>
 
-                <label htmlFor="pass"><b>Password: </b></label>
-                <input id="password" type="password" placeholder="Type your password" name="pass" required />
+                            <label htmlFor="firstName"><b>First Name *</b></label>
+                            <input id="firstName" name="firstName" required />
 
-                <label htmlFor="email"><b>Email: </b></label>
-                <input id="email" type="email" placeholder="Type your email" name="email" required />
+                            <label htmlFor="lastName"><b>Last Name *</b></label>
+                            <input id="lastName" type="text" name="lastName" required />
+                        </div>
+                        <div className="joinRow">
+                            <label htmlFor="uname"><b>Username: </b></label>
+                            <input id="uname" type="text" placeholder="Type your username" name="uname" required />
 
-                <input type="submit" value="send" />
+                            <label htmlFor="pass"><b>Password: </b></label>
+                            <input id="password" type="password" placeholder="Type your password" name="pass" required />
 
-                {error && <Alert severity="error">{error}</Alert>}
-            </form>
+                            <label htmlFor="email"><b>Email: </b></label>
+                            <input id="email" type="email" placeholder="Type your email" name="email" required />
+                        </div>
+                        <input type="submit" value="send" />
+
+                        {error && <Alert severity="error">{error}</Alert>}
+                    </form>
+                </div>
+            </div>
             <Modal className="verificationPopup" isOpen={popupOpen} onRequestClose={closePopup} ariaHideApp={false} style={{
                 overlay: {
                 backgroundColor: 'rgba(0, 0, 0, 0.5)', /* Adjust the opacity as needed */
@@ -81,7 +98,8 @@ function Join() {
                 <div className="popupText">A verification email was sent to {email}. Please click the link in the email to continue to payment.</div>
                 <button className="popupOKButton" onClick={() => closePopup()}>OK</button>
             </Modal>
-        </div>
+            <div className="footer"></div>
+        </>
         }
     </>;
 }
