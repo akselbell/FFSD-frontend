@@ -14,7 +14,9 @@ function MemberPortal() {
         <Navbar/>
         {user ? (<div>
             Welcome to the user portal!
-        </div>) : (<Navigate to="/join" />)
+        </div>) : (<div>
+            Please log in to access this page!
+        </div>)
 
         }
 

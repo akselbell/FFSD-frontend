@@ -13,9 +13,9 @@ function Navbar() {
 
     return <>
         {user ?  
-            user?.valid_subscription ? <div className="navbar"> {/*if logged in and paid */}
-                <div className="navbar-cont"> {/*left side */}
-                    <Link className="ffsdButton" to="/"> {/*put button inside here */}
+            user?.valid_subscription ? <div className="navbar">         {/*if logged in and paid */}
+                <div className="navbar-cont">                           {/*left side */}
+                    <Link className="ffsdButton" to="/">                {/*put button inside here */}
                         <div id="ffsd">
                             FFSD
                         </div>
@@ -40,9 +40,9 @@ function Navbar() {
                     </div>
                 </div> 
             </div> :
-            <div className="navbar">   {/*if logged in but not paid */}
-                <div className="navbar-cont"> {/*left side */}
-                    <Link className="ffsdButton" to="/"> {/*put button inside here */}
+            <div className="navbar">                                {/*if logged in but not paid */}
+                <div className="navbar-cont">                       {/*left side */}
+                    <Link className="ffsdButton" to="/">            {/*put button inside here */}
                         <div id="ffsd">
                             FFSD
                         </div>
