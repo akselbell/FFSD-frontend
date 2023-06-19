@@ -11,3 +11,10 @@
     letter-spacing: 0.015em;
     color: black;
 }
+
+.forgotPassLabels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 77px;
+}

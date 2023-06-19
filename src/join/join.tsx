@@ -94,7 +94,7 @@ function Join() {
                                 <input className="login-input" id="practiceAddress" type="text" name="practiceAddress"/>
                             </div>
                             <div className="joinField">
-                                <label className="login-label" htmlFor="apt"><b>Apt. or Suite # *</b></label>
+                                <label className="login-label" htmlFor="apt"><b>Apt. or Suite #</b></label>
                                 <input className="login-input" id="apt" type="text" name="apt" />
                             </div>
                         </div>
@@ -113,7 +113,9 @@ function Join() {
                             </div>
                         </div>
 
-                        {/*<div className="joinRow">  {/*this is username password and email fields, should be arranged accordingly 
+                        <input className="loginButton" id="joinSubmit" type="submit" value="Submit" />
+
+                        <div className="joinRow">  {/*this is username password and email fields, should be arranged accordingly */}
                             <div className="joinField">
                                 <label className="login-label" htmlFor="uname"><b>Username</b></label>
                                 <input className="login-input" id="uname" type="text" name="uname" required />
@@ -122,8 +124,7 @@ function Join() {
                                 <label className="login-label" htmlFor="pass"><b>Password</b></label>
                                 <input className="login-input" id="password" type="password" name="pass" required />
                             </div>
-                        </div>*/}
-                        <input className="loginButton" id="joinSubmit" type="submit" value="Submit" />
+                        </div>
 
                         {error && <Alert severity="error">{error}</Alert>}
                     </form>

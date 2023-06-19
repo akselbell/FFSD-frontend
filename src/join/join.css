@@ -85,7 +85,7 @@
     width: 584px;
     height: 420px;
     margin-left: 31%;
-    margin-top: 14%;
+    margin-top: 10%;        /* change to 14%? */
 
     /* FFS Background */
     background: linear-gradient(0deg, #F6F6F6, #F6F6F6), #FFFFFF;
