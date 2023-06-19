@@ -58,7 +58,7 @@ function LogIn() {
         <Navbar />
         {user ?
             <>
-                Hello {user.username}!
+                Hello {user.first_name}!
                 <div>
                     <div>Login sucessfull!</div>
                     <button onClick={() => {
@@ -72,10 +72,10 @@ function LogIn() {
                     <form className="login" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                         e.preventDefault();
                         const form = e.target as HTMLFormElement;
-                        const username = (document.getElementById("uname") as HTMLInputElement).value;
+                        const email = (document.getElementById("emailLogin") as HTMLInputElement).value;
                         const password = (document.getElementById("password") as HTMLInputElement).value;
                         
-                        login(username, password).then((userVal: any) => {
+                        login(email, password).then((userVal: any) => {
                             if(typeof userVal === "string") {
                                 form.reset();
                                 setError(userVal);
@@ -93,8 +93,8 @@ function LogIn() {
                         {error && <Alert className="login-error" severity="error">{error}</Alert>}
 
                         <div className="loginTitle">Login</div>
-                        <label className="login-label" htmlFor="uname">Username </label>
-                        <input id="uname" type="text" className="login-input" name="uname" required />
+                        <label className="login-label" htmlFor="email">Email Address</label>
+                        <input id="emailLogin" type="email" className="login-input" name="email" required />
                             
                         <label className="login-label" htmlFor="pass">Password </label>
                         

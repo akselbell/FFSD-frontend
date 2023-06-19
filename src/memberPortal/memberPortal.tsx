@@ -4,6 +4,7 @@ import Navbar from "../navBar";
 import "./memberPortal.css";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { userT } from "../store/user";
 
 function MemberPortal() {
     //const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);//this gets the state from user.ts
@@ -12,10 +13,10 @@ function MemberPortal() {
     return <div>
         <Header/>
         <Navbar/>
-        {user ? (<div>
+        {(user && user.valid_subscription) ? (<div>
             Welcome to the user portal!
         </div>) : (<div>
-            Please log in to access this page!
+            Please log in or pay to access this page!
         </div>)
 
         }

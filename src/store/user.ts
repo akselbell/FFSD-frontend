@@ -6,10 +6,12 @@ import { safeJSON } from "../util";
  * @description user representation, can also have an error field which will be undefined if object is
  * valid user
  */
-export type userT = {
+export type userT = {       //change this to include all the cleaned users fields
+    first_name: string,
+    last_name: string,
+    practice_name: string,
     _id: string,
-    username: string,
-    email: string,
+    encrypted_email: string,
     email_valid: boolean,
     created_at: Date,
     error?: string,
@@ -48,19 +50,18 @@ export const portalButton = async () => {
 };
 
 /**
- * @description logs in user with username and password
- * @param {string} username
+ * @description logs in user with email and password
  * @param {string} password
  * @returns {Promise<userT | string>} value can either be a valid user, or a user accessable error message
  */
-export const login = async (username: string, password: string): Promise<userT | string> => {
+export const login = async (email: string, password: string): Promise<userT | string> => {
     try {
         const user: userT = await fetch("/api/login", {   // hits the backend, fetches from localhost:80/api/login and passes that information
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({ email, password })
         }).then(v => v.json());
 
         if(user.error) return user.error;
@@ -73,20 +74,19 @@ export const login = async (username: string, password: string): Promise<userT |
 };
 
 /**
- * @param {string} username 
  * @param {string} password 
  * @param {string} email 
  * @description signs user up for service
  * @returns {Promise<string | void>} error message if any occured
  */
-export const signUp = async (username: string, password: string, email: string): Promise<string | void> => {
+export const signUp = async (prefix: string, firstName: string, lastName: string, practiceName: string, location: object, password: string, email: string): Promise<string | void> => {
     try {
         const res: any = await fetch("/api/signup", {   //hits the backend, fetches from localhost:80/api/login and passes that information
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ username, password, email })
+            body: JSON.stringify({ prefix, firstName, lastName, practiceName, location, password, email })
         }).then(v => v.json());
         
         return res;

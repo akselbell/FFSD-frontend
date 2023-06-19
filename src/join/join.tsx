@@ -39,16 +39,26 @@ function Join() {
                     <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                         e.preventDefault();                             //prevents clearing the form for a new entry   
                         const form = e.target as HTMLFormElement;
-                        const username = (document.getElementById("uname") as HTMLInputElement).value;
+                        const location = {
+                            practice_address: (document.getElementById("practiceAddress") as HTMLInputElement).value,
+                            apt: (document.getElementById("apt") as HTMLInputElement).value,
+                            city: (document.getElementById("city") as HTMLInputElement).value,
+                            postal_code: Number((document.getElementById("postalCode") as HTMLInputElement).value),
+                            state: (document.getElementById("state") as HTMLInputElement).value
+                        };
                         const password = (document.getElementById("password") as HTMLInputElement).value;
                         const email = (document.getElementById("email") as HTMLInputElement).value;
+                        const prefix = (document.getElementById("prefix") as HTMLInputElement).value;
+                        const firstName = (document.getElementById("firstName") as HTMLInputElement).value;
+                        const lastName = (document.getElementById("lastName") as HTMLInputElement).value;
+                        const practiceName = (document.getElementById("practiceName") as HTMLInputElement).value;
 
                         if(!validator.isEmail(email)) {
                             setError("Invalid email address");
                             return;
                         }
                         
-                        signUp(username, password, email).then((v: any) => {
+                        signUp(prefix, firstName, lastName, practiceName, location, password, email).then((v: any) => {
                             if(v.error) {
                                 setError(v.error);
                                 return;
@@ -81,7 +91,7 @@ function Join() {
                         <div className="joinRow">
                             <div className="joinField">
                                 <label className="login-label" htmlFor="practiceName"><b>Practice Name *</b></label>
-                                <input className="login-input" id="practiceName" type="text" name="practiceName"/>
+                                <input className="login-input" id="practiceName" type="text" name="practiceName" required/>
                             </div>
                             <div className="joinField">
                                 <label className="login-label" htmlFor="email"><b>Email Address *</b></label>
@@ -91,7 +101,7 @@ function Join() {
                         <div className="joinRow">
                             <div className="joinField">
                                 <label className="login-label" htmlFor="practiceAddress"><b>Practice Address *</b></label>
-                                <input className="login-input" id="practiceAddress" type="text" name="practiceAddress"/>
+                                <input className="login-input" id="practiceAddress" type="text" name="practiceAddress" required/>
                             </div>
                             <div className="joinField">
                                 <label className="login-label" htmlFor="apt"><b>Apt. or Suite #</b></label>
@@ -101,11 +111,11 @@ function Join() {
                         <div className="joinRow">
                             <div className="joinField">
                                 <label className="login-label" htmlFor="city"><b>City *</b></label>
-                                <input className="login-input" id="city" type="text" name="city"/>
+                                <input className="login-input" id="city" type="text" name="city" required/>
                             </div>
                             <div className="joinField">
                                 <label className="login-label" htmlFor="postalCode"><b>Postal Code *</b></label>
-                                <input className="login-input" id="postalCode" name="postalCode" required />
+                                <input className="login-input" id="postalCode" type="number" name="postalCode" required />
                             </div>
                             <div className="joinField">
                                 <label className="login-label" htmlFor="state"><b>State *</b></label>
@@ -115,11 +125,7 @@ function Join() {
 
                         <input className="loginButton" id="joinSubmit" type="submit" value="Submit" />
 
-                        <div className="joinRow">  {/*this is username password and email fields, should be arranged accordingly */}
-                            <div className="joinField">
-                                <label className="login-label" htmlFor="uname"><b>Username</b></label>
-                                <input className="login-input" id="uname" type="text" name="uname" required />
-                            </div>
+                        <div className="joinRow">  {/*this password field, should be arranged accordingly */}
                             <div className="joinField">
                                 <label className="login-label" htmlFor="pass"><b>Password</b></label>
                                 <input className="login-input" id="password" type="password" name="pass" required />
