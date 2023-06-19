@@ -59,12 +59,6 @@ function LogIn() {
         {user ?
             <>
                 Hello {user.first_name}!
-                <div>
-                    <div>Login sucessfull!</div>
-                    <button onClick={() => {
-                        dispatch(logout());
-                    }}>logout</button>
-                </div>
             </>
             :
             <div className="backgroundLogin">

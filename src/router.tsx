@@ -9,7 +9,7 @@ import VerifyEmail from "./emailVerification";
 import ForgotPass from "./forgotPass";
 import ResetPass from "./forgotPass/resetPass";
 import MemberPortal from "./memberPortal";
-
+import AfterPay from "./join/afterPay";
 
 /**
  * @param p pathname
@@ -29,7 +29,8 @@ const router = createBrowserRouter([
     makeRoute("/verify-email", <VerifyEmail/>),
     makeRoute("/forgot", <ForgotPass/>),
     makeRoute("/reset", <ResetPass/>),
-    makeRoute("/member-portal", <MemberPortal/>)
+    makeRoute("/member-portal", <MemberPortal/>),
+    makeRoute("/after-payment", <AfterPay/>)
 ]);
 
 function SiteRouter() {

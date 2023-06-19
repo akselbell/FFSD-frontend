@@ -1,5 +1,5 @@
 .forgotPassTxt {
-    align-self: flex-start;
+    padding-right: 27px;
     padding-bottom: 24px;
 
     font-family: 'Inter';
@@ -17,4 +17,12 @@
     flex-direction: column;
     align-items: center;
     padding: 70px 77px;
+}
+
+#emailForgotPass {
+    width: 473px;
+}
+
+#forgotLabel {
+    padding-left: 22px;
 }

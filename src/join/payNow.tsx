@@ -37,7 +37,7 @@ const PayNowButton: React.FC<{ email: string, user: any }> = ({ email, user }) =
   };
 
   return (
-    user.valid_subscription ? (<div></div>) : (<button onClick={handleClick}>Pay Now</button>)
+    user.valid_subscription ? (<div></div>) : (<button onClick={handleClick} id="join">Pay Now</button>)
   );
 };
 

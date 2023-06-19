@@ -19,7 +19,7 @@ function ForgotPass() {
                 <form className="forgotPassLabels" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                     e.preventDefault();
                     const form = e.target as HTMLFormElement;
-                    const email = (document.getElementById("email") as HTMLInputElement).value;
+                    const email = (document.getElementById("emailForgotPass") as HTMLInputElement).value;
                     forgotPass(email).then(v => {
                         if (v.error) {
                             setError(v.error); 
@@ -35,7 +35,7 @@ function ForgotPass() {
                     <div className="loginTitle">Forgot Password?</div>
                         <div className="forgotPassTxt">Enter your email to receive a link to reset your password.</div>
                         <label htmlFor="email" className="login-label" id="forgotLabel">Email</label>
-                        <input className="login-input" id="email" type="text" name="email" required />
+                        <input className="login-input" id="emailForgotPass" type="text" name="email" required />
 
                         <input className="loginButton" type="submit" id="join" value="Submit" />
                         <div className="notMember">Remembered your password? <Link className="joinLogin" to="/login">Login</Link></div>

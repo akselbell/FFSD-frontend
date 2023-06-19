@@ -6,7 +6,6 @@ function VerifyEmail () {
     const { token } = queryString.parse(useLocation().search);     //returns an object with all the query parameters and selects "token" parameter
 
     useEffect( () => {
-        console.log("hey");
         fetch("/api/verify-email", {
             method: "POST",
             headers: {

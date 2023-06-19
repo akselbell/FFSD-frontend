@@ -33,7 +33,7 @@ function Home() {
                     </div>
                 </div>
                 <div id="padding">
-                    <button className="joinHome" id="join">
+                    <button className="joinHome" id="join" onClick={() => {window.location.href = "/join";}}>
                         Join
                     </button>    
                 </div>  
@@ -72,7 +72,7 @@ function Home() {
             We know there are programs out there that charge you thousands to help you become an independent provider. With your membership, we include the tools you need to drop insurance and become a fee-for-service provider. Want to create your own discount plan? We provide the resources for you to do that without having to pay an outside entity to manage it.
         </p>
         <div id="padding2">
-            <button className="joinHome" id="join">
+            <button className="joinHome" id="join" onClick={() => {window.location.href = "/join";}}>
                 Join
             </button>  
         </div>

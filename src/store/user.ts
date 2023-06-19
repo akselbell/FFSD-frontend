@@ -65,7 +65,6 @@ export const login = async (email: string, password: string): Promise<userT | st
         }).then(v => v.json());
 
         if(user.error) return user.error;
-        console.log(user);
         return user;
     } catch(err) {
         console.error(err);
