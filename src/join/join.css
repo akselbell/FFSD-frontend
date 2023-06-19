@@ -11,18 +11,73 @@
     background-color: white;
     margin-top: 44px;
     display: flex;
+    justify-content: center;
 }
 
 .joinRow {
     display: flex;
     flex-direction: row;
-    padding-bottom: 71px;
+    justify-content: space-between;
+    width: 1041px;
+}
+
+.joinField {
+    display: flex;
+    flex-direction: column;
+}
+#joinTitle {
+    padding-top: 65px; /*change this*/
 }
 
 #joinTxt {
     width: 883px;
     height: 72px;
     padding-bottom: 50px;
+}
+
+#joinSubmit {
+    width: 220px;
+    margin-left: 0px;
+}
+
+#firstName {
+    width: 460px;
+}
+
+#lastName {
+    width: 460px;
+}
+
+#prefix {
+    width: 106px;
+}
+
+#practiceName {
+    width: 517px;
+}
+
+#email {
+    width: 517px;
+}
+
+#apt {
+    width: 280px;
+}
+
+#practiceAddress {
+    width: 754px;
+}
+
+#city {
+    width: 342px;
+}
+
+#postalCode {
+    width: 342px;
+}
+
+#state {
+    width: 342px;
 }
 
 .verificationPopup {
