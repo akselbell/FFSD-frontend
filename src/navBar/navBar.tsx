@@ -2,9 +2,8 @@ import React from "react";
 import "./navBar.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout, setUser, userStateT } from "../store/user";
+import { logout, userStateT } from "../store/user";
 import { portalButton } from "../store/user";
-import PayNowButton from "../join/payNow";
 
 function Navbar() {
 
