@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, userStateT } from "../store/user";
 import { portalButton } from "../store/user";
+import {link} from 'react-icons-kit/iconic/link';
+import Icon from "react-icons-kit";
 
 function Navbar() {
 
@@ -25,8 +27,9 @@ function Navbar() {
                         })}
                     </div>
                     <div className="right-navbar"> {/*right side */}
-                        <div className="logIn">
+                        <div className="logIn" id="manageSubcription">
                             <span onClick={portalButton}>Manage Subscription</span>
+                            <Icon style={{cursor: "pointer"}} icon={link} onClick={portalButton} size={18}/>
                         </div>
                         <Link className="logIn" id="logout" to="/">
                             <span onClick={() => {

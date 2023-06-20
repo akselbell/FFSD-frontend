@@ -65,7 +65,7 @@
     align-items: center;
     gap: 32px;  /*try 32*/
 
-    width: 147px;
+    width: 350px;
     height: 35px;
     padding-top: 0px;
 }
@@ -112,4 +112,9 @@
 #join:hover {
     background-color: #484F98;
     transition: 0.5ms;
+}
+
+#manageSubcription {
+    display: flex;
+    gap: 10px;    
 }
