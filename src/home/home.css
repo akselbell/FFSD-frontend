@@ -1,6 +1,7 @@
 .homeBackground {
     height: 515px;
     width: 100%;
+    overflow: hidden;
     background-color: #E4EBEE;
     display: flex;
     justify-content: space-between;
