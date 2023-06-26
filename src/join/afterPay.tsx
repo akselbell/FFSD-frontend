@@ -11,10 +11,9 @@ function AfterPay() {
             window.location.href = "/member-portal";
             return;
         }
-
+        //infinite loop here where they are logged in but not paid and go to after pay
         fetchMe()
             .then((result) => {
-            console.log(result);
             if (typeof result === "string") {
                 window.location.href = "/NotFound";
                 return;

@@ -1,12 +1,12 @@
 .joinPage {
     background-color: #E4EBEE;
-    height: 861px;
+    height: 1021px;
     display: flex;
     justify-content: space-around;
 }
 
 .joinContainer {
-    height: 774px;
+    height: 925px;
     width: 1191px;
     background-color: white;
     margin-top: 44px;
@@ -19,6 +19,13 @@
     flex-direction: row;
     justify-content: space-between;
     width: 1041px;
+}
+
+.joinRow2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 692px;
 }
 
 .joinField {
@@ -78,6 +85,26 @@
 
 #state {
     width: 342px;
+}
+
+#password {
+    width: 342px;
+}
+
+#confirmPassword {
+    width: 342px;
+    padding-left: 8px;
+}
+
+.horizontalLine {
+    border-top: solid;
+    color: rgba(15, 15, 15, 0.1);
+    border-width: 0.01em;
+    transform: rotate(-0.193deg);
+    width: 1041.006px;
+    padding-bottom: 32px;
+    margin-top: 22.5px;
+
 }
 
 .verificationPopup {
@@ -146,4 +173,8 @@
 
 .popupOKButton:hover {
     background-color: #97B245;
+}
+
+#payNow {
+    width: 101px;
 }
