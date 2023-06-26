@@ -1,6 +1,10 @@
 # FFSD Frontend
 
-This is the frontend code for the FFSD website. Written in typescript and react.
+This is the frontend code for the Fee for Service Denstist (FFSD) website. Written in typescript and react.
+
+# Description
+
+This is the frontend code for the FFSD website {website name}. FFSD is a business that unites independent dentists, providing them with the necessary tools and materials to operate independently from large dentisty corporations. The website includes a home, join, login, member portal page as well as other informational pages. The member portal is a locked page for only suscribed users, which provides resources such as email templates, social media posts, and more.
 
 ### Running the dev server
 
