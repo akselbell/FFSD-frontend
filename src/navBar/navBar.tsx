@@ -6,6 +6,7 @@ import { logout, userStateT } from "../store/user";
 import { portalButton } from "../store/user";
 import {link} from 'react-icons-kit/iconic/link';
 import Icon from "react-icons-kit";
+import { payNow } from "../join/payFunction";
 
 function Navbar() {
 
@@ -56,7 +57,7 @@ function Navbar() {
                     </div>
                     <div className="right-navbar"> {/*right side */}
                         <div className="logIn">
-                            <span onClick={() => {window.location.href = "/join";}}>Pay Now</span>
+                            <span onClick={() => {payNow(user.encrypted_email);}}>Pay Now</span>
                         </div>
                         <Link className="logIn" id="logout" to="/">
                             <span onClick={() => {
