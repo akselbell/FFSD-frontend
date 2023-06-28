@@ -118,3 +118,7 @@
     display: flex;
     gap: 10px;    
 }
+
+#payNowIcon {
+    margin-left: 10px
+}

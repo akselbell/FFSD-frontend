@@ -58,6 +58,7 @@ function Navbar() {
                     <div className="right-navbar"> {/*right side */}
                         <div className="logIn">
                             <span onClick={() => {payNow(user.encrypted_email);}}>Pay Now</span>
+                            <Icon id="payNowIcon" style={{cursor: "pointer"}} icon={link} onClick={portalButton} size={18}/>
                         </div>
                         <Link className="logIn" id="logout" to="/">
                             <span onClick={() => {
