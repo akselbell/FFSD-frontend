@@ -158,7 +158,7 @@ function Join() {
 
                         <input className="loginButton" id="joinSubmit" type="submit" value="Submit" />
 
-                        {error && <Alert severity="error">{error}</Alert>}
+                        {error && <Alert id="joinAlert" severity="error">{error}</Alert>}
                     </form>
                 </div>
             </div>
