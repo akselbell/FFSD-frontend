@@ -98,7 +98,7 @@
 
 .horizontalLine {
     border-top: solid;
-    color: rgba(15, 15, 15, 0.1);
+    color: rgba(15, 15, 15, 0.5);
     border-width: 0.01em;
     transform: rotate(-0.193deg);
     width: 1041.006px;

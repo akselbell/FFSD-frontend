@@ -57,9 +57,7 @@ function LogIn() {
         <Header />
         <Navbar />
         {user ?
-            <>
-                Hello {user.first_name}!
-            </>
+            <div></div>
             :
             <div className="backgroundLogin">
                 <div className="loginContainer">
@@ -75,12 +73,8 @@ function LogIn() {
                                 setError(userVal);
                                 return;
                             }
-                            if (!userVal.valid_subscription) {
-                                dispatch(setUser(userVal));
-                                window.location.href = "/join";
-                                return;
-                            }
                             dispatch(setUser(userVal));
+                            window.location.href = "/member-portal";
                         });
 
                     }}>

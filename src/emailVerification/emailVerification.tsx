@@ -15,7 +15,7 @@ function VerifyEmail () {
         }).then(v => v.json())
             .then( data => {
             if (!data.error) {
-                window.location.href =  "/join";
+                window.location.href =  "/member-portal";
                 return;
             }
             window.location.href = "/NotFound";
