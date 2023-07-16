@@ -2,7 +2,8 @@ import React from 'react';
 import { loadStripe, Stripe } from '@stripe/stripe-js';
 
 //stripe public key -- change this later
-const stripePromise = loadStripe('pk_test_51KjvTHAxvm9Pn2cMOfKKVTyeNCV0aQwwoDBetwfa9NOYtgSIhq1CKblvwtPnnPPycZxH4PEZr10I5zUja26ihEZT00lwQjmfE4');
+//const public_key: any = process.env.STRIPE_PUBLIC_KEY;
+const stripePromise = loadStripe("pk_test_51KjvTHAxvm9Pn2cMOfKKVTyeNCV0aQwwoDBetwfa9NOYtgSIhq1CKblvwtPnnPPycZxH4PEZr10I5zUja26ihEZT00lwQjmfE4");
 
 export const payNow = async (email: string) => {
     const stripe: Stripe | null = await stripePromise;
