@@ -38,7 +38,7 @@ function ForgotPass() {
                         <input className="login-input" id="emailForgotPass" type="text" name="email" required />
 
                         <input className="loginButton" type="submit" id="join" value="Submit" />
-                        <div className="notMember">Remembered your password? <Link className="joinLogin" to="/login">Login</Link></div>
+                        <div className="notMember" id="forgotPassPage">Remembered your password? <Link className="joinLogin" to="/login">Login</Link></div>
                         {error && <Alert severity="error">{error}</Alert>}
                         {message && <Alert severity="success">{message}</Alert>}
                 </form>
