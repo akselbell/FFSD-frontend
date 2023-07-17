@@ -7,7 +7,6 @@ import Modal from 'react-modal';
 import { payNow } from "../join/payFunction";
 
 function MemberPortal() {
-    //const user = useSelector((s: {user_state: userStateT}) => s.user_state.user);//this gets the state from user.ts
     const user = useSelector((s: any) => s.user_state.user);//this gets the state from user.ts
     const [paymentPopupOpen, setPaymentPopupOpen] = useState<boolean>(false);
     const [loggedInPopup, setLoggedInPopup] = useState<boolean>(false);
@@ -27,11 +26,11 @@ function MemberPortal() {
     return <div>
         <Header/>
         <Navbar/>
-        {(user && user.valid_subscription) ? (<div>
+        {(user && user.valid_subscription) ? (<div>         {/* If user logged in and paid*/}
             Welcome to the user portal!
         </div>) 
-        : 
-            (user && !user.valid_subscription) ? <div className="blur">
+        :               
+            (user && !user.valid_subscription) ? <div className="blur">     {/* If user logged in but not paid */}
                 Blurred member portal
                 <Modal className="verificationPopup" isOpen={paymentPopupOpen} onRequestClose={() => {setPaymentPopupOpen(false);}} ariaHideApp={false} style={{
                     overlay: {
@@ -46,7 +45,7 @@ function MemberPortal() {
             </div> 
             :
                 //add non important member portal information here now--keep in mind blur can be removed
-                <div className="blur"> 
+                <div className="blur">                      {/* If user not logged in or paid */}
                     Blurred member portal!
                     <Modal className="verificationPopup" isOpen={loggedInPopup} onRequestClose={() => {setLoggedInPopup(false);}} ariaHideApp={false} style={{
                         overlay: {

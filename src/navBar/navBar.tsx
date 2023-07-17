@@ -73,9 +73,9 @@ function Navbar() {
             </div>
             
         : 
-            <div className="navbar">  {/* not logged in */}
-                <div className="navbar-cont"> {/*left side */}
-                    <Link className="ffsdButton" to="/"> {/*put button inside here */}
+            <div className="navbar">                            {/* not logged in */}
+                <div className="navbar-cont">                   {/*left side */}
+                    <Link className="ffsdButton" to="/">        {/*put button inside here */}
                         <div id="ffsd">
                             FFSD
                         </div>
@@ -85,7 +85,7 @@ function Navbar() {
                             return <Link className="txtNavbar" to={word.href} key={index}>{word.name}</Link>;
                         })}
                     </div>
-                    <div className="right-navbar"> {/*right side */}
+                    <div className="right-navbar">              {/*right side */}
                         <Link className="logIn" to="/login">
                             <div className="logIn">
                                 Log In

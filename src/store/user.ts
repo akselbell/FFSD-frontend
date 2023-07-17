@@ -94,7 +94,9 @@ export const signUp = async (prefix: string, firstName: string, lastName: string
         return error;
     }
 };
-
+/**
+ * @description Fetches /api/forgot
+ */
 export const forgotPass = async (email: string) => {
     try {
         const res = await fetch("/api/forgot", {
@@ -111,6 +113,9 @@ export const forgotPass = async (email: string) => {
     }
 };
 
+/**
+ * @description Fetches /api/reset
+ */
 export const resetPass = async (passwordToken: string, password: string) => {
     try {
         const res = await fetch("/api/reset", {
@@ -127,6 +132,10 @@ export const resetPass = async (passwordToken: string, password: string) => {
     }
 };
 
+/**
+ * @description Creates global user state variable, a function to set the user state, and a function to logout which
+ * calls the /api/signout
+ */
 export const userSlice = createSlice({
     name: "user_state",
     initialState: {
